@@ -1,235 +1,122 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="720">
-  <defs><style/></defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="420" viewBox="0 0 520 420" fill="none">
   <style>
-    svg { font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif; font-size: 14px; color: #777 }
-    h1,h2,h3 { margin: 8px 0 2px; padding: 0; color: #0366d6 }
-    h1 { font-size: 20px; font-weight: 700 }
-    h2 { font-size: 16px; font-weight: 400 }
-    h3 { font-size: 14px; font-weight: 400 }
-    h1 svg, h2 svg, h3 svg { fill: currentColor }
-    section > .field { margin-left: 5px; margin-right: 5px }
-    .field { display: flex; align-items: center; margin-bottom: 2px; white-space: nowrap }
-    .field svg { margin: 0 8px; fill: #959da5; flex-shrink: 0 }
-    .row { display: flex; flex-wrap: wrap }
-    .row section { flex: 1 1 0 }
-    .column { display: flex; flex-direction: column; align-items: center }
-    .center { justify-content: center }
-    .horizontal-wrap { flex-wrap: wrap }
-    .no-wrap { white-space: nowrap }
-    .fill-width { width: 100% }
-    .avatar { border-radius: 50%; margin: 0 6px }
-    .calendar.field { margin: 4px 0 4px 7px }
-    .calendar .day { outline: 1px solid rgba(27,31,35,.04); outline-offset: -1px }
-    svg.bar { margin: 4px 0 }
-    .field.language { margin: 0 8px; flex-grow: 0 }
-    footer { margin-top: 8px; font-size: 10px; font-style: italic; color: #666; text-align: right; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 4px }
-    .blue { color: #58a6ff }
-    :root {
-      --color-calendar-graph-day-bg: #ebedf0;
-      --color-calendar-graph-day-L1-bg: #9be9a8;
-      --color-calendar-graph-day-L2-bg: #40c463;
-      --color-calendar-graph-day-L3-bg: #30a14e;
-      --color-calendar-graph-day-L4-bg: #216e39;
-    }
+    .bg { fill: #0d1117; stroke: #30363d; stroke-width: 1.5; rx: 8px; }
+    .title { font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif; fill: #58a6ff; }
+    .subtitle { font: 400 12px 'Segoe UI', Ubuntu, Sans-Serif; fill: #8b949e; }
+    .header-text { font: 600 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: #c9d1d9; }
+    .stat-label { font: 400 13px 'Segoe UI', Ubuntu, Sans-Serif; fill: #c9d1d9; }
+    .stat-value { font: 600 13px 'Segoe UI', Ubuntu, Sans-Serif; fill: #f0f6fc; text-anchor: end; }
+    .lang-label { font: 500 12px 'Segoe UI', Ubuntu, Sans-Serif; fill: #c9d1d9; }
+    .lang-pct { font: 400 12px 'Segoe UI', Ubuntu, Sans-Serif; fill: #8b949e; text-anchor: end; }
+    .icon { fill: #8b949e; }
+    .icon-accent { fill: #58a6ff; }
+    .icon-success { fill: #3fb950; }
+    .icon-pulls { fill: #a371f7; }
   </style>
-  <foreignObject x="0" y="0" width="100%" height="100%">
-    <div xmlns="http://www.w3.org/1999/xhtml">
 
-      <!-- Header -->
-      <section>
-        <h1 class="field">
-          <img class="avatar" src="https://avatars.githubusercontent.com/u/DanielGodriNeto" width="20" height="20" onerror="this.style.display='none'" />
-          <span>Daniel Godri Neto</span>
-        </h1>
-        <div class="row">
-          <section>
-            <div class="field">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                <path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 00.471.696l2.5 1a.75.75 0 00.557-1.392L8.5 7.742V4.75z"/>
-              </svg>
-              Ingressou no GitHub em 2024
-            </div>
-            <div class="field">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                <path fill-rule="evenodd" d="M5.5 3.5a2 2 0 100 4 2 2 0 000-4zM2 5.5a3.5 3.5 0 115.898 2.549 5.507 5.507 0 013.034 4.084.75.75 0 11-1.482.235 4.001 4.001 0 00-7.9 0 .75.75 0 01-1.482-.236A5.507 5.507 0 013.102 8.05 3.49 3.49 0 012 5.5zM11 4a.75.75 0 100 1.5 1.5 1.5 0 01.666 2.844.75.75 0 00-.416.672v.352a.75.75 0 00.574.73c1.2.289 2.162 1.2 2.522 2.372a.75.75 0 101.434-.44 5.01 5.01 0 00-2.56-3.012A3 3 0 0011 4z"/>
-              </svg>
-              Seguido por 0 usuários
-            </div>
-          </section>
-          <section>
-            <div class="field calendar">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 11" width="210" height="16">
-                <g>
-                  <rect class="day" x="0"   y="0" width="11" height="11" fill="#9be9a8" rx="2" ry="2"/>
-                  <rect class="day" x="15"  y="0" width="11" height="11" fill="#ebedf0" rx="2" ry="2"/>
-                  <rect class="day" x="30"  y="0" width="11" height="11" fill="#40c463" rx="2" ry="2"/>
-                  <rect class="day" x="45"  y="0" width="11" height="11" fill="#ebedf0" rx="2" ry="2"/>
-                  <rect class="day" x="60"  y="0" width="11" height="11" fill="#9be9a8" rx="2" ry="2"/>
-                  <rect class="day" x="75"  y="0" width="11" height="11" fill="#30a14e" rx="2" ry="2"/>
-                  <rect class="day" x="90"  y="0" width="11" height="11" fill="#ebedf0" rx="2" ry="2"/>
-                  <rect class="day" x="105" y="0" width="11" height="11" fill="#9be9a8" rx="2" ry="2"/>
-                  <rect class="day" x="120" y="0" width="11" height="11" fill="#40c463" rx="2" ry="2"/>
-                  <rect class="day" x="135" y="0" width="11" height="11" fill="#ebedf0" rx="2" ry="2"/>
-                  <rect class="day" x="150" y="0" width="11" height="11" fill="#9be9a8" rx="2" ry="2"/>
-                  <rect class="day" x="165" y="0" width="11" height="11" fill="#216e39" rx="2" ry="2"/>
-                  <rect class="day" x="180" y="0" width="11" height="11" fill="#40c463" rx="2" ry="2"/>
-                  <rect class="day" x="195" y="0" width="11" height="11" fill="#9be9a8" rx="2" ry="2"/>
-                </g>
-              </svg>
-            </div>
-            <div class="field">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                <path fill-rule="evenodd" d="M1 2.5A2.5 2.5 0 013.5 0h8.75a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0V1.5h-8a1 1 0 00-1 1v6.708A2.492 2.492 0 013.5 9h3.25a.75.75 0 010 1.5H3.5a1 1 0 100 2h5.75a.75.75 0 010 1.5H3.5A2.5 2.5 0 011 11.5v-9zm13.23 7.79a.75.75 0 001.06-1.06l-2.505-2.505a.75.75 0 00-1.06 0L9.22 9.229a.75.75 0 001.06 1.061l1.225-1.224v6.184a.75.75 0 001.5 0V9.066l1.224 1.224z"/>
-              </svg>
-              Contribuiu para 16 repositórios
-            </div>
-          </section>
-        </div>
-      </section>
+  <rect class="bg" width="518" height="418" x="1" y="1" />
 
-      <!-- Activity -->
-      <section style="margin-top:8px">
-        <div class="row">
-          <section>
-            <h2 class="field">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                <path fill-rule="evenodd" d="M1.5 1.75a.75.75 0 00-1.5 0v12.5c0 .414.336.75.75.75h14.5a.75.75 0 000-1.5H1.5V1.75zm14.28 2.53a.75.75 0 00-1.06-1.06L10 7.94 7.53 5.47a.75.75 0 00-1.06 0L3.22 8.72a.75.75 0 001.06 1.06L7 7.06l2.47 2.47a.75.75 0 001.06 0l5.25-5.25z"/>
-              </svg>
-              Atividade
-            </h2>
-            <div class="field">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                <path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"/>
-              </svg>
-              47 Commits
-            </div>
-            <div class="field">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                <path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"/>
-              </svg>
-              0 Pull requests abertos
-            </div>
-            <div class="field">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                <path d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/>
-                <path fill-rule="evenodd" d="M8 0a8 8 0 100 16A8 8 0 008 0zM1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0z"/>
-              </svg>
-              0 Issues abertas
-            </div>
-          </section>
-          <section>
-            <h2 class="field">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                <path fill-rule="evenodd" d="M1.326 1.973a1.2 1.2 0 011.49-.832c.387.112.977.307 1.575.602.586.291 1.243.71 1.7 1.296.022.027.042.056.061.084A13.22 13.22 0 018 3c.67 0 1.289.037 1.861.108l.051-.07c.457-.586 1.114-1.004 1.7-1.295a9.654 9.654 0 011.576-.602 1.2 1.2 0 011.49.832c.14.493.356 1.347.479 2.29.079.604.123 1.28.07 1.936.541.977.773 2.11.773 3.301C16 13 14.5 15 8 15s-8-2-8-5.5c0-1.034.238-2.128.795-3.117-.08-.712-.034-1.46.052-2.12.122-.943.34-1.797.479-2.29z"/>
-                <path d="M4 8a1 1 0 012 0v1a1 1 0 01-2 0V8zm2.078 2.492c-.083-.264.146-.492.422-.492h3c.276 0 .505.228.422.492C9.67 11.304 8.834 12 8 12c-.834 0-1.669-.696-1.922-1.508zM10 8a1 1 0 112 0v1a1 1 0 11-2 0V8z"/>
-              </svg>
-              Stats da comunidade
-            </h2>
-            <div class="field">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/>
-              </svg>
-              1 Repositório com estrela
-            </div>
-            <div class="field">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                <path fill-rule="evenodd" d="M5.5 3.5a2 2 0 100 4 2 2 0 000-4zM2 5.5a3.5 3.5 0 115.898 2.549 5.507 5.507 0 013.034 4.084.75.75 0 11-1.482.235 4.001 4.001 0 00-7.9 0 .75.75 0 01-1.482-.236A5.507 5.507 0 013.102 8.05 3.49 3.49 0 012 5.5zM11 4a.75.75 0 100 1.5 1.5 1.5 0 01.666 2.844.75.75 0 00-.416.672v.352a.75.75 0 00.574.73c1.2.289 2.162 1.2 2.522 2.372a.75.75 0 101.434-.44 5.01 5.01 0 00-2.56-3.012A3 3 0 0011 4z"/>
-              </svg>
-              Seguindo 3 usuários
-            </div>
-          </section>
-        </div>
-      </section>
+  <g transform="translate(25, 35)">
+    <path class="icon" d="M0 0c-4.42 0-8 3.58-8 8 0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" transform="scale(1.5) translate(4, 2)"/>
+    <g transform="translate(45, 12)">
+      <text class="title">DanielGodriNeto</text>
+      <text class="subtitle" y="18">🎮 Game modder &amp; CS student | Learning to code one commit at a time</text>
+    </g>
+  </g>
 
-      <!-- Repositories -->
-      <section style="margin-top:8px">
-        <h2 class="field">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8z"/>
-          </svg>
-          16 Repositórios
-        </h2>
-        <div class="row">
-          <section>
-            <div class="field">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                <path fill-rule="evenodd" d="M3.637 2.291A.75.75 0 014.23 2h7.54a.75.75 0 01.593.291l3.48 4.5a.75.75 0 01-.072.999l-7.25 7a.75.75 0 01-1.042 0l-7.25-7a.75.75 0 01-.072-.999l3.48-4.5z"/>
-              </svg>
-              Prefere licença MIT
-            </div>
-            <div class="field">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                <path fill-rule="evenodd" d="M2.5 3.5c0-.133.058-.318.282-.55.227-.237.592-.484 1.1-.708C4.899 1.795 6.354 1.5 8 1.5c1.647 0 3.102.295 4.117.742.51.224.874.47 1.101.707.224.233.282.418.282.551 0 .133-.058.318-.282.55-.227.237-.592.484-1.1.708C11.101 5.205 9.646 5.5 8 5.5c-1.647 0-3.102-.295-4.117-.742-.51-.224-.874-.47-1.101-.707-.224-.233-.282-.418-.282-.551z"/>
-              </svg>
-              1 Estrela recebida
-            </div>
-          </section>
-          <section>
-            <div class="field">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                <path fill-rule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z"/>
-              </svg>
-              0 Forks
-            </div>
-            <div class="field">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                <path fill-rule="evenodd" d="M1.679 7.932c.412-.621 1.242-1.75 2.366-2.717C5.175 4.242 6.527 3.5 8 3.5c1.473 0 2.824.742 3.955 1.715 1.124.967 1.954 2.096 2.366 2.717a.119.119 0 010 .136c-.412.621-1.242 1.75-2.366 2.717C10.825 11.758 9.473 12.5 8 12.5c-1.473 0-2.824-.742-3.955-1.715C2.92 9.818 2.09 8.69 1.679 8.068a.119.119 0 010-.136z"/>
-              </svg>
-              16 Visualizações
-            </div>
-          </section>
-        </div>
-      </section>
+  <line x1="25" y1="80" x2="495" y2="80" stroke="#30363d" stroke-width="1" />
 
-      <!-- Languages -->
-      <section style="margin-top:8px">
-        <h2 class="field">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path fill-rule="evenodd" d="M1.5 2.75a.25.25 0 01.25-.25h12.5a.25.25 0 01.25.25v8.5a.25.25 0 01-.25.25h-6.5a.75.75 0 00-.53.22L4.5 14.44v-2.19a.75.75 0 00-.75-.75h-2a.25.25 0 01-.25-.25v-8.5z"/>
-          </svg>
-          3 Linguagens
-        </h2>
-      </section>
-      <section class="column" style="margin-top:4px">
-        <h3 class="field">Linguagens mais usadas</h3>
-        <svg class="bar" xmlns="http://www.w3.org/2000/svg" width="460" height="8">
-          <mask id="languages-bar">
-            <rect x="0" y="0" width="460" height="8" fill="white" rx="5"/>
-          </mask>
-          <!-- Python ~70% = 322px -->
-          <rect mask="url(#languages-bar)" x="0"   y="0" width="322" height="8" fill="#3572A5"/>
-          <!-- JavaScript ~18% = 83px -->
-          <rect mask="url(#languages-bar)" x="322" y="0" width="83"  height="8" fill="#f1e05a"/>
-          <!-- GML ~12% = 55px -->
-          <rect mask="url(#languages-bar)" x="405" y="0" width="55"  height="8" fill="#6DBF3E"/>
-        </svg>
-        <div class="field center horizontal-wrap fill-width">
-          <div class="field center no-wrap language">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-              <path fill="#3572A5" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
-            </svg>
-            Python
-          </div>
-          <div class="field center no-wrap language">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-              <path fill="#f1e05a" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
-            </svg>
-            JavaScript
-          </div>
-          <div class="field center no-wrap language">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-              <path fill="#6DBF3E" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
-            </svg>
-            GML (GameMaker)
-          </div>
-        </div>
-      </section>
+  <g transform="translate(25, 105)">
+    <text class="header-text" y="5">Account Activities</text>
+    
+    <g transform="translate(5, 20)">
+      <g transform="translate(0, 10)">
+        <path class="icon-accent" d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0ZM14.25 8c0 .414-.336.75-.75.75h-2.181a3.993 3.993 0 0 0 0-1.5h2.181c.414 0 .75.336.75.75Zm-9.638.75H2.5a.75.75 0 0 1 0-1.5h2.112a3.993 3.993 0 0 0 0 1.5Z"/>
+        <text class="stat-label" x="22">Total Commits</text>
+        <text class="stat-value" x="200">142</text>
+      </g>
+      <g transform="translate(0, 36)">
+        <path class="icon-success" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/>
+        <path class="icon-success" fill-rule="evenodd" d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"/>
+        <text class="stat-label" x="22">Global Issues Opened</text>
+        <text class="stat-value" x="200">14</text>
+      </g>
+      <g transform="translate(0, 62)">
+        <path class="icon-pulls" d="M7.177 3.073a.75.75 0 0 0-1.06-1.06l-2.75 2.75a.75.75 0 0 0 0 1.06l2.75 2.75a.75.75 0 1 0 1.06-1.06L5.56 5.25h3.69a2.25 2.25 0 0 1 2.25 2.25v2.312a1.751 1.751 0 1 0 1.5 0V7.5A3.75 3.75 0 0 0 9.25 3.75h-3.69l1.617-1.677Z"/>
+        <text class="stat-label" x="22">Pull Requests Merged</text>
+        <text class="stat-value" x="200">8</text>
+      </g>
+      <g transform="translate(0, 88)">
+        <path class="icon" d="M1 2.75C1 1.784 1.784 1 2.75 1h10.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 15H2.75A1.75 1.75 0 0 1 1 13.25V2.75Zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25H2.75Z"/>
+        <text class="stat-label" x="22">Year Contributions</text>
+        <text class="stat-value" x="200">328</text>
+      </g>
+      <g transform="translate(0, 114)">
+        <path class="icon" d="M1.75 1h12.5c.966 0 1.75.784 1.75 1.75v9.5A1.75 1.75 0 0 1 14.25 14H4.06l-2.56 2.33A.75.75 0 0 1 .25 15.8V2.75C.25 1.784 1.034 1 1.75 1Zm12.5 1.5H1.75a.25.25 0 0 0-.25.25v11.1l1.63-1.482a.75.75 0 0 1 .506-.168h10.614a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Z"/>
+        <text class="stat-label" x="22">Code Reviews Given</text>
+        <text class="stat-value" x="200">5</text>
+      </g>
+    </g>
+  </g>
 
-      <footer style="margin-top:16px">
-        <span>Métricas geradas manualmente · GitHub: DanielGodriNeto</span>
-        <span>Atualizado em 21 Mai 2026</span>
-      </footer>
+  <line x1="255" y1="105" x2="255" y2="265" stroke="#30363d" stroke-width="1" />
 
-    </div>
-  </foreignObject>
+  <g transform="translate(280, 105)">
+    <text class="header-text" y="5">Repository Overview</text>
+    
+    <g transform="translate(5, 20)">
+      <g transform="translate(0, 10)">
+        <text class="stat-label">Total Repositories</text>
+        <text class="stat-value" x="190">16</text>
+      </g>
+      <g transform="translate(0, 36)">
+        <text class="stat-label">Public Access</text>
+        <text class="stat-value" x="190">15</text>
+      </g>
+      <g transform="translate(0, 62)">
+        <text class="stat-label">Starred Repositories</text>
+        <text class="stat-value" x="190">31</text>
+      </g>
+      <g transform="translate(0, 88)">
+        <text class="stat-label">PUC-PR Coursework</text>
+        <text class="stat-value" x="190">6</text>
+      </g>
+      <g transform="translate(0, 114)">
+        <text class="stat-label">Cookie Clicker Mods</text>
+        <text class="stat-value" x="190">3</text>
+      </g>
+    </g>
+  </g>
+
+  <line x1="25" y1="285" x2="495" y2="285" stroke="#30363d" stroke-width="1" />
+
+  <g transform="translate(25, 305)">
+    <text class="header-text" y="5">Languages Distribution Spectrum</text>
+    
+    <g transform="translate(5, 15)">
+      <rect width="460" height="12" fill="#30363d" rx="6" />
+      <rect width="258" height="12" fill="#3572A5" rx="6" />
+      <rect x="258" width="86" height="12" fill="#f1e05a" />
+      <rect x="344" width="116" height="12" fill="#8b949e" rx="6" />
+    </g>
+
+    <g transform="translate(5, 45)">
+      <g transform="translate(0, 0)">
+        <circle cx="5" cy="5" r="5" fill="#3572A5" />
+        <text class="lang-label" x="16" y="9">Python (56.2%)</text>
+      </g>
+      <g transform="translate(150, 0)">
+        <circle cx="5" cy="5" r="5" fill="#f1e05a" />
+        <text class="lang-label" x="16" y="9">JavaScript (18.8%)</text>
+      </g>
+      <g transform="translate(310, 0)">
+        <circle cx="5" cy="5" r="5" fill="#8b949e" />
+        <text class="lang-label" x="16" y="9">Markdown / Others (25.0%)</text>
+      </g>
+    </g>
+  </g>
+
+  <line x1="25" y1="390" x2="495" y2="390" stroke="#30363d" stroke-width="0.5" />
+  
+  <text class="subtitle" x="25" y="405">Generated metric data based on profile sync metrics</text>
 </svg>
