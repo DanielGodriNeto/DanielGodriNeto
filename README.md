@@ -1,16 +1,24 @@
-## Hi there 👋
-
-<!--
-**DanielGodriNeto/DanielGodriNeto** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<h1 align="center">Daniel Godri Neto</h1>
+<h3 align="center">Você pode me encontrar nesses lugares:</h3>
+<div align="center">
+  <table>
+    <tr>
+      <td>LinkedIn</td>
+      <td><a href="https://www.linkedin.com/in/danielgodrineto/">danielgodrineto</a></td>
+    </tr>
+    <tr>
+      <td>E-mail</td>
+      <td><a href="mailto:godrineto@gmail.com">godrineto@gmail.com</a></td>
+    </tr>
+  </table>
+</div>
+<p align="center">
+  <a href="https://hitscounter.dev">
+    <img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2FDanielGodriNeto&label=&icon=github&color=%23198754&message=&style=flat&tz=UTC">
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/DanielGodriNeto?tab=repositories&type=source">
+    <img src="https://github-readme-stats.vercel.app/api?username=DanielGodriNeto&show_icons=true&theme=dark&hide_border=true" />
+  </a>
+</p>
