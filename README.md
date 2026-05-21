@@ -18,7 +18,5 @@
   </a>
 </p>
 <p align="center">
-  <a href="https://github.com/DanielGodriNeto?tab=repositories&type=source">
-    <img src="https://github-readme-stats.vercel.app/api?username=DanielGodriNeto&show_icons=true&theme=dark&hide_border=true" />
-  </a>
+  <a href="https://github.com/DanielGodriNeto?tab=repositories&type=source"><img src="./github-metrics.svg" /></a>
 </p>
