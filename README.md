@@ -1,5 +1,5 @@
 <h1 align="center">Daniel Godri Neto</h1>
-<h3 align="center">Você pode me encontrar nesses lugares:</h3>
+<h3 align="center">You can find me in all of these places:</h3>
 <div align="center">
   <table>
     <tr>
