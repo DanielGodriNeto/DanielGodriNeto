@@ -1,11 +1,8 @@
 name: Metrics
 on:
-  # Schedule updates (daily at midnight)
   schedule:
     - cron: "0 0 * * *"
-  # Allows manual runs from the Actions tab
   workflow_dispatch:
-  # Run on every push to main or master
   push:
     branches:
       - master
@@ -21,51 +18,40 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          # Your GitHub token stored in repository secrets
           token: ${{ secrets.METRICS_TOKEN }}
 
-          # Core Profile Settings
-          user: eljobe
+          user: DanielGodriNeto
           template: classic
           base: header, activity, community, repositories, metadata
-          config_timezone: Europe/Zurich
-          
-          # Include private contributions in metrics total
-          config_order: header, activity, community, repositories, metadata
-          base_indepth: yes
+          config_timezone: America/Sao_Paulo
 
-          # Achievements Plugin
+          # Achievements
           plugin_achievements: yes
           plugin_achievements_display: compact
           plugin_achievements_ignored: explorer, gister, helper
           plugin_achievements_secrets: yes
           plugin_achievements_threshold: C
 
-          # Repositories & License Settings
+          # Licenças e Linhas
           plugin_lines: yes
           plugin_licenses: yes
           plugin_licenses_setup: yes
           plugin_licenses_ratio: yes
 
-          # Coding Languages Plugin
+          # Idiomas/Linguagens
           plugin_languages: yes
           plugin_languages_sections: most-used
           plugin_languages_details: bytes-size, percentage
           plugin_languages_limit: 8
 
-          # StackOverflow Integration
-          plugin_stackoverflow: yes
-          plugin_stackoverflow_user: 95724
-          plugin_stackoverflow_sections: answers-top, questions-recent
-          plugin_stackoverflow_limit: 2
+          # Desativado o StackOverflow dele para não misturar dados
+          plugin_stackoverflow: no
 
-          # Followup / Issues & PRs Plugin
+          # Issues e PRs
           plugin_followup: yes
           plugin_followup_indepth: yes
           plugin_followup_sections: user, repositories
 
-          # Traffic & Profile Views Plugin
+          # Tráfego
           plugin_traffic: yes
-
-          # Calendar explicitly disabled per your profile look
           plugin_isocalendar: no
