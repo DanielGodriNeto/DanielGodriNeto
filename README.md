@@ -72,7 +72,7 @@
 
 ---
 
-<h3 align="center">📊 Stats</h3>
+<h3 align="center">Contador de views</h3>
 
 <div align="center">
   <img src="https://count.getloli.com/@:DanielGodriNeto?theme=minecraft&padding=5&offset=0&scale=2&align=top&pixelated=1&darkmode=auto" alt="visitor counter" />
