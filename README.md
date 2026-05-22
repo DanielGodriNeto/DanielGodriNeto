@@ -1,5 +1,5 @@
-<h1 align="center">Daniel Godri Neto</h1>
-<h3 align="center">You can find me in all of these places:</h3>
+<h1 align="center">Daniel Godri Neto's Public Profile Page!</h1>
+<h3 align="center">You can find out more about me in all of these fun places:</h3>
 <div align="center">
   <table>
     <tr>
@@ -12,13 +12,11 @@
     </tr>
   </table>
 </div>
-
 <p align="center">
   <a href="https://hitscounter.dev">
     <img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2FDanielGodriNeto&label=&icon=github&color=%23198754&message=&style=flat&tz=UTC">
   </a>
 </p>
-
 <p align="center">
   <a href="https://github.com/DanielGodriNeto?tab=repositories&type=source"><img src="./github-metrics.svg" /></a>
 </p>
