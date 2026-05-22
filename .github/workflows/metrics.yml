@@ -1,11 +1,16 @@
-# Visit https://github.com/lowlighter/metrics/blob/master/action.yml for full reference
 name: Metrics
 on:
-  # Schedule updates (daily)
-  schedule: [{cron: "0 0 * * *"}]
-  # Lines below let you run workflow manually and on each commit
+  # Schedule updates (daily at midnight)
+  schedule:
+    - cron: "0 0 * * *"
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-  push: {branches: ["master", "main"]}
+  # Run on every push to main or master
+  push:
+    branches:
+      - master
+      - main
+
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
@@ -16,34 +21,35 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          # Token with repo and read:user scopes
+          # Your GitHub personal access token stored in repository secrets
           token: ${{ secrets.METRICS_TOKEN }}
 
-          # Options & Layout Structure
-          user: DanielGodriNeto
+          # Core Options
+          user: eljobe
           template: classic
           base: header, activity, community, repositories, metadata
-          config_timezone: America/Sao_Paulo
-          
-          # Achievements Plugin Setup
+          config_timezone: Europe/Zurich
+
+          # Achievements Plugin
           plugin_achievements: yes
           plugin_achievements_display: compact
           plugin_achievements_ignored: explorer, gister, helper
           plugin_achievements_secrets: yes
           plugin_achievements_threshold: C
-          
-          # Isometric Calendar
-          plugin_isocalendar: no
-          
-          # Traffic Plugin
+
+          # Repositories Traffic Plugin
           plugin_traffic: yes
-          
-          # Languages Plugin Layout Setup
+
+          # Coding Languages Plugin
           plugin_languages: yes
-          plugin_languages_limit: 8
-          plugin_languages_sections: most-used
-          plugin_languages_details: percentage
-          
-          # Followup Plugin (Calculates complete in-depth Issues & Pull Requests metrics)
+
+          # StackOverflow Integration
+          plugin_stackoverflow: yes
+          plugin_stackoverflow_user: 95724
+
+          # Followup / Issues & PRs Plugin
           plugin_followup: yes
           plugin_followup_indepth: yes
+
+          # Calendar (Explicitly disabled per your reference)
+          plugin_isocalendar: no
