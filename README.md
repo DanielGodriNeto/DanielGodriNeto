@@ -12,11 +12,13 @@
     </tr>
   </table>
 </div>
+
 <p align="center">
   <a href="https://hitscounter.dev">
     <img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2FDanielGodriNeto&label=&icon=github&color=%23198754&message=&style=flat&tz=UTC">
   </a>
 </p>
+
 <p align="center">
   <a href="https://github.com/DanielGodriNeto?tab=repositories&type=source"><img src="./github-metrics.svg" /></a>
 </p>
