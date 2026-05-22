@@ -1,8 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="520" height="420" viewBox="0 0 520 420" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="340" viewBox="0 0 480 340" fill="none">
   <style>
     .bg { fill: #0d1117; stroke: #30363d; stroke-width: 1.5; rx: 8px; }
-    .title { font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif; fill: #58a6ff; }
-    .subtitle { font: 400 12px 'Segoe UI', Ubuntu, Sans-Serif; fill: #8b949e; }
+    .title { font: 600 16px 'Segoe UI', Ubuntu, Sans-Serif; fill: #58a6ff; }
     .header-text { font: 600 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: #c9d1d9; }
     .stat-label { font: 400 13px 'Segoe UI', Ubuntu, Sans-Serif; fill: #c9d1d9; }
     .stat-value { font: 600 13px 'Segoe UI', Ubuntu, Sans-Serif; fill: #f0f6fc; text-anchor: end; }
@@ -12,92 +11,79 @@
     .icon-accent { fill: #58a6ff; }
     .icon-success { fill: #3fb950; }
     .icon-pulls { fill: #a371f7; }
+    .icon-star { fill: #e3b341; }
   </style>
 
-  <rect class="bg" width="518" height="418" x="1" y="1" />
+  <rect class="bg" width="478" height="338" x="1" y="1" />
 
   <g transform="translate(25, 35)">
-    <path class="icon" d="M0 0c-4.42 0-8 3.58-8 8 0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" transform="scale(1.5) translate(4, 2)"/>
-    <g transform="translate(45, 12)">
-      <text class="title">DanielGodriNeto</text>
-      <text class="subtitle" y="18">🎮 Game modder &amp; CS student | Learning to code one commit at a time</text>
-    </g>
+    <path class="icon-accent" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97 1.155 5.215a.75.75 0 0 1-1.089.791L8 12.834l-3.766 1.98a.75.75 0 0 1-1.09-.791l1.156-5.215L1.253 6.376a.75.75 0 0 1 .416-1.28l4.21-.611L7.757.668A.75.75 0 0 1 8 .25Z" transform="scale(1.2) translate(-2, -3)" />
+    <text class="title" x="22" y="10">DanielGodriNeto — Metrics Dashboard</text>
   </g>
 
-  <line x1="25" y1="80" x2="495" y2="80" stroke="#30363d" stroke-width="1" />
+  <line x1="25" y1="55" x2="455" y2="55" stroke="#30363d" stroke-width="1" />
 
-  <g transform="translate(25, 105)">
+  <g transform="translate(25, 80)">
     <text class="header-text" y="5">Account Activities</text>
-    
     <g transform="translate(5, 20)">
       <g transform="translate(0, 10)">
         <path class="icon-accent" d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0ZM14.25 8c0 .414-.336.75-.75.75h-2.181a3.993 3.993 0 0 0 0-1.5h2.181c.414 0 .75.336.75.75Zm-9.638.75H2.5a.75.75 0 0 1 0-1.5h2.112a3.993 3.993 0 0 0 0 1.5Z"/>
         <text class="stat-label" x="22">Total Commits</text>
-        <text class="stat-value" x="200">142</text>
+        <text class="stat-value" x="180">142</text>
       </g>
       <g transform="translate(0, 36)">
         <path class="icon-success" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/>
         <path class="icon-success" fill-rule="evenodd" d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"/>
-        <text class="stat-label" x="22">Global Issues Opened</text>
-        <text class="stat-value" x="200">14</text>
+        <text class="stat-label" x="22">Issues Opened</text>
+        <text class="stat-value" x="180">14</text>
       </g>
       <g transform="translate(0, 62)">
         <path class="icon-pulls" d="M7.177 3.073a.75.75 0 0 0-1.06-1.06l-2.75 2.75a.75.75 0 0 0 0 1.06l2.75 2.75a.75.75 0 1 0 1.06-1.06L5.56 5.25h3.69a2.25 2.25 0 0 1 2.25 2.25v2.312a1.751 1.751 0 1 0 1.5 0V7.5A3.75 3.75 0 0 0 9.25 3.75h-3.69l1.617-1.677Z"/>
-        <text class="stat-label" x="22">Pull Requests Merged</text>
-        <text class="stat-value" x="200">8</text>
+        <text class="stat-label" x="22">Pull Requests</text>
+        <text class="stat-value" x="180">8</text>
       </g>
       <g transform="translate(0, 88)">
-        <path class="icon" d="M1 2.75C1 1.784 1.784 1 2.75 1h10.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 15H2.75A1.75 1.75 0 0 1 1 13.25V2.75Zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25H2.75Z"/>
-        <text class="stat-label" x="22">Year Contributions</text>
-        <text class="stat-value" x="200">328</text>
-      </g>
-      <g transform="translate(0, 114)">
-        <path class="icon" d="M1.75 1h12.5c.966 0 1.75.784 1.75 1.75v9.5A1.75 1.75 0 0 1 14.25 14H4.06l-2.56 2.33A.75.75 0 0 1 .25 15.8V2.75C.25 1.784 1.034 1 1.75 1Zm12.5 1.5H1.75a.25.25 0 0 0-.25.25v11.1l1.63-1.482a.75.75 0 0 1 .506-.168h10.614a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Z"/>
-        <text class="stat-label" x="22">Code Reviews Given</text>
-        <text class="stat-value" x="200">5</text>
+        <path class="icon-star" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21 .612a.75.75 0 0 1 .416 1.279l-3.046 2.97 1.155 5.215a.75.75 0 0 1-1.089.791L8 12.834l-3.766 1.98a.75.75 0 0 1-1.09-.791l1.156-5.215L1.253 6.376a.75.75 0 0 1 .416-1.28l4.21-.611L7.757.668A.75.75 0 0 1 8 .25Z"/>
+        <text class="stat-label" x="22">Starred Repos</text>
+        <text class="stat-value" x="180">31</text>
       </g>
     </g>
   </g>
 
-  <line x1="255" y1="105" x2="255" y2="265" stroke="#30363d" stroke-width="1" />
+  <line x1="240" y1="80" x2="240" y2="210" stroke="#30363d" stroke-width="1" />
 
-  <g transform="translate(280, 105)">
+  <g transform="translate(260, 80)">
     <text class="header-text" y="5">Repository Overview</text>
-    
     <g transform="translate(5, 20)">
       <g transform="translate(0, 10)">
         <text class="stat-label">Total Repositories</text>
-        <text class="stat-value" x="190">16</text>
+        <text class="stat-value" x="180">16</text>
       </g>
       <g transform="translate(0, 36)">
         <text class="stat-label">Public Access</text>
-        <text class="stat-value" x="190">15</text>
+        <text class="stat-value" x="180">15</text>
       </g>
       <g transform="translate(0, 62)">
-        <text class="stat-label">Starred Repositories</text>
-        <text class="stat-value" x="190">31</text>
+        <text class="stat-label">PUC-PR Coursework</text>
+        <text class="stat-value" x="180">6</text>
       </g>
       <g transform="translate(0, 88)">
-        <text class="stat-label">PUC-PR Coursework</text>
-        <text class="stat-value" x="190">6</text>
-      </g>
-      <g transform="translate(0, 114)">
         <text class="stat-label">Cookie Clicker Mods</text>
-        <text class="stat-value" x="190">3</text>
+        <text class="stat-value" x="180">3</text>
       </g>
     </g>
   </g>
 
-  <line x1="25" y1="285" x2="495" y2="285" stroke="#30363d" stroke-width="1" />
+  <line x1="25" y1="230" x2="455" y2="230" stroke="#30363d" stroke-width="1" />
 
-  <g transform="translate(25, 305)">
-    <text class="header-text" y="5">Languages Distribution Spectrum</text>
+  <g transform="translate(25, 250)">
+    <text class="header-text" y="5">Languages Spectrum</text>
     
     <g transform="translate(5, 15)">
-      <rect width="460" height="12" fill="#30363d" rx="6" />
-      <rect width="258" height="12" fill="#3572A5" rx="6" />
-      <rect x="258" width="86" height="12" fill="#f1e05a" />
-      <rect x="344" width="116" height="12" fill="#8b949e" rx="6" />
+      <rect width="420" height="10" fill="#30363d" rx="5" />
+      <rect width="236" height="10" fill="#3572A5" rx="5" />
+      <rect x="236" width="79" height="10" fill="#f1e05a" />
+      <rect x="315" width="105" height="10" fill="#8b949e" rx="5" />
     </g>
 
     <g transform="translate(5, 45)">
@@ -105,18 +91,14 @@
         <circle cx="5" cy="5" r="5" fill="#3572A5" />
         <text class="lang-label" x="16" y="9">Python (56.2%)</text>
       </g>
-      <g transform="translate(150, 0)">
+      <g transform="translate(135, 0)">
         <circle cx="5" cy="5" r="5" fill="#f1e05a" />
         <text class="lang-label" x="16" y="9">JavaScript (18.8%)</text>
       </g>
-      <g transform="translate(310, 0)">
+      <g transform="translate(270, 0)">
         <circle cx="5" cy="5" r="5" fill="#8b949e" />
         <text class="lang-label" x="16" y="9">Markdown / Others (25.0%)</text>
       </g>
     </g>
   </g>
-
-  <line x1="25" y1="390" x2="495" y2="390" stroke="#30363d" stroke-width="0.5" />
-  
-  <text class="subtitle" x="25" y="405">Generated metric data based on profile sync metrics</text>
 </svg>
