@@ -1,202 +1,46 @@
-
-Claude finished the response
-CV - Daniel Godri Neto.docx.pdf
-pdf
-
-
-Edite esse README com as minhas informacoes esse e um exemplo que quero q voce substitua com minhas informacoes esse e o link caso seja necessario https://github.com/DanielGodriNeto 16 repositories * * * [DanielGodriNeto/Raciocinio-Algoritmico-PUC-PR](https://github.com/DanielGodriNeto/
-
-pasted
-
-
-README.md
-47 lines
-
-md
-
-20:07
-
-Synthesized CV data to personalize developer profile documentation
-Synthesized CV data to personalize developer profile documentation
-Aqui está o seu README personalizado! Ele inclui:
-
-Apresentação com seu nome, área e objetivo profissional
-Tabela de contatos com e-mail, LinkedIn e GitHub
-Badges de habilidades com Python, Java, GML, N8N, Construct 3 etc.
-Idiomas (PT, EN, JP)
-Experiência profissional resumida (Pombo Games, Desenvolvendo Talentos, voluntariado)
-Projetos em destaque em tabela
-Lista dos repositórios da faculdade
-GitHub Stats automáticos via github-readme-stats (carregam direto no perfil)
-Contador de visitas via komarev
-Para usar, é só criar o repositório DanielGodriNeto/DanielGodriNeto no GitHub (repositório especial com o mesmo nome do seu usuário) e colocar esse arquivo como README.md na raiz. Ele aparecerá automaticamente no seu perfil! 🚀
-
-
-Readme
-Document · MD 
-Cara nao precisa colocar todas as minhas informacoes do curriculo so mandei quaso quizesse adicionar alguma coisinha
-
-20:09
-
-Decidiu simplificar o README conforme preferência do usuário
-Decidiu simplificar o README conforme preferência do usuário
-Entendido! Vou simplificar, algo mais clean como o template original.
-
-
-Ran a command, read a file
-Ran a command, read a file
-Muito mais simples agora! Só o nome, subtítulo, LinkedIn, e-mail e o card de stats do GitHub. Se quiser adicionar ou remover alguma coisa é só falar!
-
-
-Readme
-Document · MD 
-mas ficou so 20 linhas cara me manda seguindo o modelo do cara
-
-20:10
-
-Ran 2 commands, read a file
-Ran 2 commands, read a file
-Agora segue a mesma estrutura do Pepper — título, subtítulo, tabela de links, contador de visitas e o card do GitHub no lugar do github-metrics.svg dele. Se quiser adicionar mais redes sociais (Instagram, Discord, etc.) é só falar!
-
-
-Readme
-Document · MD 
-
-github-metrics.svg
-svg
-
-faz uma imagem assim
-
-20:13
-
-Decodificou estrutura SVG e planejou adaptação com dados de Daniel
-Decodificou estrutura SVG e planejou adaptação com dados de Daniel
-Entendido! O arquivo é gerado pela ferramenta lowlighter/metrics. Vou criar um SVG no mesmo estilo com os dados do Daniel.
-
-
-Viewed a file, created a file
-Viewed a file, created a file
-Agora vou atualizar o README para referenciar esse arquivo local:
-
-
-Ran a command, read a file
-Ran a command, read a file
-Pronto! Agora você tem dois arquivos para colocar na raiz do repositório especial (DanielGodriNeto/DanielGodriNeto):
-
-github-metrics.svg — o card de métricas no mesmo estilo do original, com seus dados (commits, repos, linguagens Python/JS/GML)
-README.md — estrutura idêntica ao do Pepper, referenciando o SVG local
-Se quiser atualizar os números reais do SVG (commits, seguidores, etc.), é só me passar os dados e eu ajusto!
-
-
-Github metrics
-Image · SVG 
-
-Readme
-Document · MD 
-aonde SVG
-
-20:17
-
-Reading the SVG to render it
-Reading the SVG to render it
-
-
-Esse é o visual do seu github-metrics.svg! É exatamente nesse estilo que vai aparecer no seu perfil quando o arquivo estiver na raiz do repositório. Se quiser mudar algum número (commits, estrelas etc.) ou adicionar mais linguagens, é só falar!
-
-Cria um arquvio github-metrict.svg e coloca pra atualiza automatico
-
-20:30
-
-Identificou ferramenta apropriada e planejou configuração automatizada
-Identificou ferramenta apropriada e planejou configuração automatizada
-O SVG que você mandou foi gerado pelo lowlighter/metrics — uma GitHub Action que atualiza o arquivo automaticamente a cada push ou em horário agendado. Vou criar o arquivo de workflow pra você!
-
-
-Created a file, read a file
-Created a file, read a file
-Agora é só seguir esses passos para funcionar:
-
-1. Criar o token do GitHub Vai em github.com → Settings → Developer settings → Personal access tokens → Tokens (classic) e cria um com a permissão read:user.
-
-2. Adicionar o token no repositório No repositório DanielGodriNeto/DanielGodriNeto, vai em Settings → Secrets and variables → Actions → New repository secret, cria um secret chamado METRICS_TOKEN e cola o token lá.
-
-3. Colocar o arquivo no repositório Cria a pasta .github/workflows/ na raiz do repositório e coloca esse metrics.yml dentro.
-
-A partir daí o github-metrics.svg vai ser gerado automaticamente a cada push e todo dia à meia-noite. O README já está apontando para ./github-metrics.svg, então vai aparecer direto no seu perfil!
-
-
-Metrics
-YML 
-Comoa diciona uma pasta
-
-20:40
-
-Identificou pergunta simples sobre adicionar pasta
-Identificou pergunta simples sobre adicionar pasta
-No GitHub, você não consegue criar uma pasta vazia diretamente — ela precisa ter pelo menos um arquivo dentro. Tem duas formas:
-
-Pelo site do GitHub:
-
-Abre o repositório DanielGodriNeto/DanielGodriNeto
-Clica em "Add file" → "Create new file"
-No campo do nome do arquivo, digita o caminho completo: .github/workflows/metrics.yml
-O GitHub cria as pastas automaticamente conforme você digita as barras /
-Cola o conteúdo do arquivo e clica em "Commit changes"
-Pelo VS Code / computador:
-
-Cria a pasta .github/workflows/ normalmente no explorador de arquivos
-Coloca o metrics.yml dentro
-Faz o commit e push normalmente
-A primeira opção é mais fácil se você não usa Git no computador ainda!
-
-
-
-
-
-
-Claude is AI and can make mistakes. Please double-check responses.
-Metrics · YML
 name: Metrics
- 
+
 on:
   schedule:
-    - cron: "0 0 * * *"   # Atualiza todo dia à meia-noite (UTC)
-  workflow_dispatch:        # Permite rodar manualmente
+    - cron: "0 0 * * *"       # Updates every day at midnight (UTC)
+  workflow_dispatch:          # Allows you to run manually from the Actions tab
   push:
-    branches: ["main"]      # Atualiza a cada push na main
- 
+    branches: ["main"]        # Updates on every push to the main branch
+
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
     permissions:
       contents: write
- 
+
     steps:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           filename: github-metrics.svg
- 
-          # Configurações do perfil
+
+          # Profile configuration
           user: DanielGodriNeto
           template: classic
-          base: header, activity, community, repositories, metadata
- 
-          # Plugins ativados
+          
+          # "base" controls what core stats are shown in the main card layout.
+          # Including 'header', 'repositories', and 'metadata' adds your avatar, description, and totals.
+          base: header, repositories, metadata
+
+          # PLUGINS & ADDITIONAL FEATURES:
+
+          # Languages breakdown plugin
           plugin_languages: yes
           plugin_languages_limit: 4
- 
+          plugin_languages_sections: most-used
+          plugin_languages_details: percentage
+
+          # Followup plugin: Displays accurate stats for Issues and Pull Requests
           plugin_followup: yes
-          plugin_followup_sections: repositories
- 
+          plugin_followup_sections: repositories, user
+
+          # Recent Activity plugin (Shows recent commits, issues, and PR interactions)
           plugin_activity: yes
           plugin_activity_limit: 5
           plugin_activity_days: 14
           plugin_activity_filter: all
- 
-
-
-
-
-
-
