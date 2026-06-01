@@ -6,15 +6,15 @@
 <table align="center">
   <tr>
     <td valign="top" width="55%">
-      <h3>👾 Sobre mim</h3>
+      <h3> Sobre mim</h3>
       <p>
-        Apaixonado por tecnologia e jogos, curto criar <strong>mods para games</strong> e explorar o que dá pra fazer além do que os desenvolvedores planejaram. 🎮
+        Apaixonado por tecnologia e jogos, curto criar <strong>mods para games</strong> e explorar o que dá pra fazer além do que os desenvolvedores planejaram. 
       </p>
       <p>
-        Gosto de trabalhar em <strong>projetos variados</strong> — desde ferramentas úteis até experimentos malucos, sempre aprendendo algo novo no processo. 🛠️
+        Gosto de trabalhar em <strong>projetos variados</strong> — desde ferramentas úteis até experimentos malucos, sempre aprendendo algo novo no processo. 
       </p>
       <p>
-        Também desenvolvo <strong>projetos da faculdade</strong>, colocando em prática o que aprendo e transformando trabalhos acadêmicos em código de verdade. 📚
+        Também desenvolvo <strong>projetos da faculdade</strong>, colocando em prática o que aprendo e transformando trabalhos acadêmicos em código de verdade. 
       </p>
     </td>
     <td valign="top" align="right" width="45%">
