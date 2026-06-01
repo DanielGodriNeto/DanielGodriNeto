@@ -6,21 +6,22 @@
 <table align="center">
   <tr>
     <td valign="top" width="55%">
-      <h3>📬 Find me at</h3>
-      <table>
-        <tr>
-          <td>🔗 LinkedIn</td>
-          <td><a href="https://www.linkedin.com/in/danielgodrineto/">danielgodrineto</a></td>
-        </tr>
-        <tr>
-          <td>📧 E-mail</td>
-          <td><a href="mailto:godrineto@gmail.com">godrineto@gmail.com</a></td>
-        </tr>
-        <tr>
-          <td>🎮 Discord</td>
-          <td>Mancato_Hiroshi</td>
-        </tr>
-      </table>
+      <h3>👾 Sobre mim</h3>
+      <p>
+        Apaixonado por tecnologia e jogos, curto criar <strong>mods para games</strong> e explorar o que dá pra fazer além do que os desenvolvedores planejaram. 🎮
+      </p>
+      <p>
+        Gosto de trabalhar em <strong>projetos variados</strong> — desde ferramentas úteis até experimentos malucos, sempre aprendendo algo novo no processo. 🛠️
+      </p>
+      <p>
+        Também desenvolvo <strong>projetos da faculdade</strong>, colocando em prática o que aprendo e transformando trabalhos acadêmicos em código de verdade. 📚
+      </p>
+    </td>
+    <td valign="top" align="right" width="45%">
+      <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeTBwcHBqZnpycGppb3lwaXNnaXYxemx4c3ozcWlwdXFueTFvamdzbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aNkKabft4Rs5y/giphy.gif" height="280" />
+    </td>
+  </tr>
+</table>
       <br/>
       <div>
         <a href="https://www.linkedin.com/in/danielgodrineto/" target="_blank">
