@@ -11,7 +11,7 @@
         Apaixonado por tecnologia e jogos, curto criar <strong>mods para games</strong> e explorar o que dá pra fazer além do que os desenvolvedores planejaram. 
       </p>
       <p>
-        Gosto de trabalhar em <strong>projetos variados</strong> — desde ferramentas úteis até experimentos malucos, sempre aprendendo algo novo no processo. 
+        Gosto de trabalhar em <strong>projetos variados</strong>  desde ferramentas úteis até experimentos malucos, sempre aprendendo algo novo no processo. 
       </p>
       <p>
         Também desenvolvo <strong>projetos da faculdade</strong>, colocando em prática o que aprendo e transformando trabalhos acadêmicos em código de verdade. 
