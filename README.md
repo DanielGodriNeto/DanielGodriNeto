@@ -9,9 +9,7 @@
     <a href="mailto:godrineto@gmail.com" target="_blank">
       <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
     </a>
-    <a href="https://discord.com" target="_blank">
-      <img src="https://img.shields.io/badge/Discord-Mancato__Hiroshi-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
-    </a>
+    <img src="https://img.shields.io/badge/Discord-Mancato__Hiroshi-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
   </p>
 </div>
 
@@ -30,7 +28,6 @@ Apaixonado por tecnologia, desenvolvimento de jogos e inteligência artificial. 
 ## 🏆 Certificações em Destaque
 
 <div align="center">
-  <!-- Certificado Principal com Maior Destaque -->
   <p><strong>Google AI Professional Certificate</strong></p>
   <img src="./google-ai-professional-certificate.png" width="240" alt="Google AI Professional Certificate" style="border-radius: 8px; margin-bottom: 20px;"/>
   
@@ -57,7 +54,7 @@ Apaixonado por tecnologia, desenvolvimento de jogos e inteligência artificial. 
 
 <br/>
 
-## 📊 Estatísticas & Projetos em Destaque
+## 📊 Estatísticas & Projetos Ativos
 
 <p align="center">
   <a href="https://github.com/DanielGodriNeto?tab=repositories&type=source">
@@ -65,21 +62,17 @@ Apaixonado por tecnologia, desenvolvimento de jogos e inteligência artificial. 
   </a>
 </p>
 
-<p align="center">
+<!-- O card do CS2 centralizado com largura total dinâmica e espaçamento simétrico em relação ao de cima -->
+<p align="center" style="margin-top: 15px;">
   <img src="./cs2-card.svg" alt="CS2 trade-up scanner stats" width="100%" />
 </p>
 
-<!-- Espaçamento seguro e aviso legal sem sobreposição -->
-<br/>
-<p align="center">
-  <sub style="color: #8b949e;">⚠️ <em>Disclaimer: The CS2 Trade-Up Scanner is a simulation tool for informational purposes only. This is not financial advice.</em></sub>
-</p>
 <br/>
 
 ---
 
 <div align="center">
-  <!-- Seção discreta de Analytics no rodapé -->
+  <!-- Analytics discreto no rodapé -->
   <p align="center">
     <img src="https://count.getloli.com/@:DanielGodriNeto?theme=minecraft&padding=5&offset=0&scale=1.5&align=top&pixelated=1&darkmode=auto" alt="visitor counter" />
     &nbsp;&nbsp;&nbsp;&nbsp;
@@ -88,6 +81,6 @@ Apaixonado por tecnologia, desenvolvimento de jogos e inteligência artificial. 
     </a>
   </p>
 
-  <!-- Animação final fluida -->
+  <!-- Animação final da cobrinha ocupando a base de forma limpa -->
   <img src="https://raw.githubusercontent.com/DanielGodriNeto/DanielGodriNeto/snake-output/snake.svg" alt="Snake animation" width="100%" />
 </div>
