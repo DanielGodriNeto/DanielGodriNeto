@@ -62,12 +62,14 @@ Apaixonado por tecnologia, desenvolvimento de jogos e inteligência artificial[c
   </a>
 </p>
 
-<!-- Card do CS2 com largura inteira dinâmica e o disclaimer corrigido internamente -->
-<p align="center" style="margin-top: 15px;">
-  <img src="./cs2-card.svg" alt="CS2 trade-up scanner stats" width="100%" />
+<!-- Removido o width="100%" para evitar distorção vertical e adicionado quebras para isolar o card -->
+<br/><br/>
+
+<p align="center">
+  <img src="./cs2-card.svg" alt="CS2 trade-up scanner stats" />
 </p>
 
-<br/>
+<br/><br/>
 
 ---
 
