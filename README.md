@@ -66,13 +66,10 @@ Apaixonado por tecnologia, desenvolvimento de jogos e inteligência artificial[c
 
 ## 🎮 Projetos em Destaque
 
-<table align="center" width="100%">
-  <tr>
-    <td align="center">
-      <img src="./cs2-card.svg" alt="CS2 trade-up scanner stats" width="100%" />
-    </td>
-  </tr>
-</table>
+<!-- Renderização nativa pura do Markdown: elimina distorções de proporção e mantém o corte perfeito do SVG original -->
+<p align="center">
+  <img src="./cs2-card.svg" alt="CS2 Trade-Up Scanner Stats" />
+</p>
 
 <br/>
 
