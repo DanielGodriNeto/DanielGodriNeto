@@ -66,7 +66,6 @@ Apaixonado por tecnologia, desenvolvimento de jogos e inteligência artificial[c
 
 ## 🎮 Projetos em Destaque
 
-<!-- Largura fixa ideal em pixels: Grande na web desktop e perfeitamente responsivo para telas menores/mobile -->
 <p align="center">
   <img src="./cs2-card.svg" alt="CS2 Trade-Up Scanner Stats" width="850" />
 </p>
