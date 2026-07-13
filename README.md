@@ -63,7 +63,7 @@ Apaixonado por tecnologia, desenvolvimento de jogos e inteligência artificial. 
 </p>
 
 <!-- O card do CS2 centralizado com largura total dinâmica e espaçamento simétrico em relação ao de cima -->
-<p align="center" style="margin-top: 15px;">
+<p align="center" style="margin-top: 20px;">
   <img src="./cs2-card.svg" alt="CS2 trade-up scanner stats" width="100%" />
 </p>
 
