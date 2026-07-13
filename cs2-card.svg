@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="150" viewBox="0 0 480 150" role="img" aria-label="CS2 trade-up scanner stats">
+  <rect x="0.5" y="0.5" width="479" height="149" rx="4" fill="#0a0c0a" stroke="#262b26"/>
+  <text x="20" y="26" fill="#39d97a" font-size="13" font-weight="700" letter-spacing="1" font-family="monospace">CS2 TRADE-UP SCANNER</text>
+  <text x="460" y="26" fill="#6e786e" font-size="11" text-anchor="end" font-family="monospace">6-agent population</text>
+  <line x1="20" y1="36" x2="460" y2="36" stroke="#262b26"/>
+  <text x="20" y="74" fill="#6e786e" font-size="10" letter-spacing="0.5" font-family="monospace">POPULATION AVG ROI (7D)</text><text x="20" y="96" fill="#e0524f" font-size="20" font-weight="700" font-family="monospace">-39.3%</text>
+  <text x="260" y="74" fill="#6e786e" font-size="10" letter-spacing="0.5" font-family="monospace">BEST VERIFIED FIND</text><text x="260" y="96" fill="#c9d1c9" font-size="20" font-weight="700" font-family="monospace">not yet verified</text>
+  <text x="20" y="118" fill="#6e786e" font-size="10" letter-spacing="0.5" font-family="monospace">CANDIDATES SCANNED</text><text x="20" y="140" fill="#c9d1c9" font-size="20" font-weight="700" font-family="monospace">26,505</text>
+  <text x="260" y="118" fill="#6e786e" font-size="10" letter-spacing="0.5" font-family="monospace">REAL OUTCOMES LOGGED</text><text x="260" y="140" fill="#c9d1c9" font-size="20" font-weight="700" font-family="monospace">0</text>
+  <line x1="20" y1="132" x2="460" y2="132" stroke="#262b26"/>
+  <text x="20" y="140" fill="#6e786e" font-size="9" font-family="monospace">aggregate only -- not investment advice, updated periodically</text>
+</svg>

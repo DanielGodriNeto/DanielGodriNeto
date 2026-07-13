@@ -97,6 +97,12 @@
 
 <br/>
 
+<p align="center">
+  <img src="./cs2-card.svg" alt="CS2 trade-up scanner stats" />
+</p>
+
+<br/>
+
 ---
 
 <img src="https://raw.githubusercontent.com/DanielGodriNeto/DanielGodriNeto/snake-output/snake.svg" alt="Snake animation" />
