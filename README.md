@@ -17,11 +17,11 @@
 
 ## 🚀 Sobre Mim
 
-Apaixonado por tecnologia, desenvolvimento de jogos e inteligência artificial. Tenho foco em criar **mods para games**, explorar engenharia reversa e construir ferramentas que expandem as possibilidades originais dos softwares.
+Apaixonado por tecnologia, desenvolvimento de jogos e inteligência artificial[cite: 1]. Tenho foco em criar **mods para games**, explorar engenharia reversa e construir ferramentas que expandem as possibilidades originais dos softwares[cite: 1].
 
-- 🛠️ **Projetos Variados:** Desenvolvimento de ferramentas úteis, automações e experimentos práticos.
-- 🎓 **Foco Acadêmico:** Transformando conceitos teóricos da faculdade em aplicações reais e código de produção.
-- 🧠 **Especialização:** Aplicando IA para otimização de fluxos de trabalho e engenharia de software.
+- 🛠️ **Projetos Variados:** Desenvolvimento de ferramentas úteis, automações e experimentos práticos[cite: 1].
+- 🎓 **Foco Acadêmico:** Transformando conceitos teóricos da faculdade em aplicações reais e código de produção[cite: 1].
+- 🧠 **Especialização:** Aplicando IA para otimização de fluxos de trabalho e engenharia de software[cite: 1].
 
 <br/>
 
@@ -62,8 +62,8 @@ Apaixonado por tecnologia, desenvolvimento de jogos e inteligência artificial. 
   </a>
 </p>
 
-<!-- O card do CS2 centralizado com largura total dinâmica e espaçamento simétrico em relação ao de cima -->
-<p align="center" style="margin-top: 20px;">
+<!-- Card do CS2 com largura inteira dinâmica e o disclaimer corrigido internamente -->
+<p align="center" style="margin-top: 15px;">
   <img src="./cs2-card.svg" alt="CS2 trade-up scanner stats" width="100%" />
 </p>
 
