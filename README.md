@@ -69,6 +69,11 @@ Apaixonado por tecnologia, desenvolvimento de jogos e inteligência artificial. 
   <img src="./cs2-card.svg" alt="CS2 trade-up scanner stats" width="100%" />
 </p>
 
+<!-- Espaçamento seguro e aviso legal sem sobreposição -->
+<br/>
+<p align="center">
+  <sub style="color: #8b949e;">⚠️ <em>Disclaimer: The CS2 Trade-Up Scanner is a simulation tool for informational purposes only. This is not financial advice.</em></sub>
+</p>
 <br/>
 
 ---
