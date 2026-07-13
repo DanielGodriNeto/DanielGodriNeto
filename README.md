@@ -67,8 +67,8 @@ Apaixonado por tecnologia, desenvolvimento de jogos e inteligência artificial. 
 ## 🎮 Projetos em Destaque
 
 <div align="center">
-  <!-- width="100%" nativo expande o card, e a largura máxima impede que ele estoure em telas ultrawide -->
-  <img src="./cs2-card.svg" alt="CS2 Trade-Up Scanner Stats" width="100%" style="max-width: 750px;" />
+  <!-- Forçando dimensões grandes mantendo a proporção exata de 480x180 para não cortar e ficar grande -->
+  <img src="./cs2-card.svg" alt="CS2 Trade-Up Scanner Stats" width="850" height="318" />
 </div>
 
 <br/>
