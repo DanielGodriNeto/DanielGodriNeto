@@ -32,7 +32,7 @@ Apaixonado por tecnologia, desenvolvimento de jogos e inteligência artificial[c
   <img src="./google-ai-professional-certificate.png" width="240" alt="Google AI Professional Certificate" style="border-radius: 8px; margin-bottom: 20px;"/>
   
   <br/>
-  <p align="center"><small>Especializações Concluídos</small></p>
+  <p align="center"><small>Especializações Concluídas</small></p>
   
   <!-- Grid Responsivo de Sub-certificações -->
   <img src="./google-ai-fundamentals.png" width="95" alt="AI Fundamentals" title="AI Fundamentals" style="border-radius: 6px; margin: 2px;"/>
@@ -66,12 +66,13 @@ Apaixonado por tecnologia, desenvolvimento de jogos e inteligência artificial[c
 
 ## 🎮 Projetos em Destaque
 
-<div align="center">
-  <!-- Forçando o bloco do CS2 a se isolar completamente em seu próprio container sem esticar a altura -->
-  <div style="display: block; width: 100%; text-align: center; padding: 10px 0;">
-    <img src="./cs2-card.svg" alt="CS2 trade-up scanner stats" style="max-width: 100%; height: auto;" />
-  </div>
-</div>
+<table align="center" width="100%">
+  <tr>
+    <td align="center">
+      <img src="./cs2-card.svg" alt="CS2 trade-up scanner stats" width="100%" />
+    </td>
+  </tr>
+</table>
 
 <br/>
 
