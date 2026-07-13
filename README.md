@@ -67,7 +67,8 @@ Apaixonado por tecnologia, desenvolvimento de jogos e inteligência artificial. 
 ## 🎮 Projetos em Destaque
 
 <div align="center">
-  <img src="./cs2-card.svg" alt="CS2 Trade-Up Scanner Stats" style="width: 100%; height: auto; max-width: 850px;" />
+  <!-- Definindo a proporção exata de largura e altura via atributos HTML para evitar que o GitHub corte o fundo -->
+  <img src="./cs2-card.svg" alt="CS2 Trade-Up Scanner Stats" width="650" height="243" />
 </div>
 
 <br/>
