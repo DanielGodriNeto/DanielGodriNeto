@@ -1,5 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="170" viewBox="0 0 480 150" role="img" aria-label="CS2 trade-up scanner stats">
-  <rect x="0.5" y="0.5" width="479" height="149" rx="4" fill="#0a0c0a" stroke="#262b26"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="180" viewBox="0 0 480 180" role="img" aria-label="CS2 trade-up scanner stats">
+  <rect x="0.5" y="0.5" width="479" height="179" rx="4" fill="#0a0c0a" stroke="#262b26"/>
+  
   <text x="20" y="26" fill="#39d97a" font-size="13" font-weight="700" letter-spacing="1" font-family="monospace">CS2 TRADE-UP SCANNER</text>
   <text x="460" y="26" fill="#6e786e" font-size="11" text-anchor="end" font-family="monospace">6-agent population</text>
   <line x1="20" y1="36" x2="460" y2="36" stroke="#262b26"/>
