@@ -25,6 +25,15 @@ Apaixonado por tecnologia, desenvolvimento de jogos e inteligência artificial. 
 
 <br/>
 
+## 🥇 Conquistas Acadêmicas
+
+<div align="center">
+  <p>🥇 <strong>1º Lugar — Projeto Jokenpô</strong><br/><sub>Raciocínio Algorítmico · PUC-PR</sub></p>
+  <p>🥈 <strong>2º Lugar — Projeto Batalha Naval</strong><br/><sub>Raciocínio Algorítmico · PUC-PR</sub></p>
+</div>
+
+<br/>
+
 ## 🏆 Certificações em Destaque
 
 <div align="center">
@@ -42,6 +51,14 @@ Apaixonado por tecnologia, desenvolvimento de jogos e inteligência artificial. 
   <img src="./google-ai-for-data-analysis.png" width="95" alt="AI for Data Analysis" title="AI for Data Analysis" style="border-radius: 6px; margin: 2px; border: 1px solid #262b26;"/>
   <img src="./google-ai-for-research-and-insights.png" width="95" alt="AI for Research and Insights" title="AI for Research and Insights" style="border-radius: 6px; margin: 2px; border: 1px solid #262b26;"/>
   <img src="./google-ai-for-writing-and-communicating.png" width="95" alt="AI for Writing and Communicating" title="AI for Writing and Communicating" style="border-radius: 6px; margin: 2px; border: 1px solid #262b26;"/>
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="https://img.shields.io/badge/English-C1%20(EF%20SET)-4CAF50?style=for-the-badge" alt="English C1" />
+  <img src="https://img.shields.io/badge/Cybersecurity-Foundations%20(Google)-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Foundations of Cybersecurity" />
+  <img src="https://img.shields.io/badge/Empreendedorismo-SEBRAE%20(4%20trilhas)-003399?style=for-the-badge" alt="Empreendedorismo SEBRAE" />
 </div>
 
 <br/>
