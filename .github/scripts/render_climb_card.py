@@ -70,22 +70,69 @@ def xy(col, row):
     return PANEL_X + col * CELL_W, PANEL_Y + (row + 0.5) * CELL_H
 
 
-def route_svg(altitude):
-    """Dashed full route, solid amber up to the climber, numbered camps (filled once reached)."""
-    full = " ".join("%.1f,%.1f" % xy(c, r) for _, c, r in ROUTE)
-    done = [(a, c, r) for a, c, r in ROUTE if a <= altitude]
-    col, row = point_at(altitude)
-    climbed = " ".join("%.1f,%.1f" % xy(c, r) for _, c, r in done) + " %.1f,%.1f" % xy(col, row)
-    out = [f'<polyline points="{full}" fill="none" stroke="{SNOW}" stroke-width="1.2" stroke-dasharray="2 4" opacity=".55"/>',
-           f'<polyline points="{climbed}" fill="none" stroke="{AMBER}" stroke-width="1.8"/>']
-    for n, (alt, c, r) in enumerate(ROUTE[1:], 1):
-        x, y = xy(c, r)
-        fill = AMBER if alt <= altitude else INK
-        out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="5" fill="{fill}" stroke="{AMBER}" stroke-width="1.2"/>')
-        out.append(f'<text class="num" x="{x + 9:.1f}" y="{y + 3:.1f}">{n}</text>')
-    x, y = xy(col, row)
-    out.append(f'<circle class="me" cx="{x:.1f}" cy="{y:.1f}" r="4" fill="{SNOW}" stroke="{AMBER}" stroke-width="2"/>')
+def line_cells(p0, p1):
+    """Grid cells on the segment p0 -> p1 (col, row), three columns wide so it survives the scaling."""
+    (c0, r0), (c1, r1) = (round(v) for v in p0), (round(v) for v in p1)
+    steps = max(abs(c1 - c0), abs(r1 - r0), 1)
+    cells = set()
+    for i in range(steps + 1):
+        c, r = round(c0 + (c1 - c0) * i / steps), round(r0 + (r1 - r0) * i / steps)
+        cells |= {(c - 1, r), (c, r), (c + 1, r)}
+    return cells
+
+
+def block(c, r, w, h):
+    return {(c + dc, r + dr) for dc in range(-w // 2, w - w // 2) for dr in range(h)}
+
+
+def route_cells(altitude):
+    """The route as characters on the art grid: {(col, row): (char, colour)}."""
+    cur = point_at(altitude)
+    pts = [(c, r) for _, c, r in ROUTE]
+    grid = {}
+    for p0, p1 in zip(pts, pts[1:]):
+        for cell in line_cells(p0, p1):
+            grid[cell] = ("+", "#cfdbe3")
+    done = [(c, r) for a, c, r in ROUTE if a <= altitude] + [cur]
+    for p0, p1 in zip(done, done[1:]):
+        for cell in line_cells(p0, p1):
+            grid[cell] = ("#", AMBER)
+    for alt, c, r in ROUTE[1:]:
+        reached = alt <= altitude
+        for cell in block(c, r - 1, 6, 3):
+            grid[cell] = ("@", AMBER) if reached else ("O", SNOW)
+    return grid
+
+
+def ascii_rows(cells, cls):
+    """One <text> per grid row, characters pinned to their column by textLength."""
+    out = []
+    for r in sorted({r for _, r in cells}):
+        cols = {c: v for (c, rr), v in cells.items() if rr == r}
+        runs = []
+        for c in range(min(cols), max(cols) + 1):
+            ch, col = cols.get(c, (" ", None))
+            if runs and runs[-1][0] == col:
+                runs[-1][1] += ch
+            else:
+                runs.append([col, ch])
+        spans = "".join(f'<tspan fill="{col or "none"}">{t}</tspan>' for col, t in runs)
+        x = PANEL_X + min(cols) * CELL_W
+        out.append(f'<text class="{cls}" x="{x:.2f}" y="{PANEL_Y + (r + 1) * CELL_H - 0.4:.2f}" '
+                   f'textLength="{(max(cols) - min(cols) + 1) * CELL_W:.2f}" lengthAdjust="spacingAndGlyphs" '
+                   f'xml:space="preserve">{spans}</text>')
     return "".join(out)
+
+
+def route_svg(altitude):
+    cells = route_cells(altitude)
+    col, row = point_at(altitude)
+    me = {cell: ("@", "#ffffff") for cell in block(round(col), round(row) - 1, 8, 4)}
+    nums = "".join(
+        f'<text class="num" x="{PANEL_X + (c + 5) * CELL_W:.1f}" y="{PANEL_Y + (r + 1) * CELL_H:.1f}">{n}</text>'
+        for n, (_, c, r) in enumerate(ROUTE[1:], 1)
+    )
+    return ascii_rows(cells, "g") + nums + ascii_rows(me, "g me")
 
 
 def scene(altitude):
@@ -136,6 +183,7 @@ def render(contributions, repos, joined):
     .dim {{ fill: #7d8a96; font-size: 12px; }}
     .tag {{ font-size: 9px; fill: {AMBER}; }}
     .num {{ font-size: 10px; font-weight: 700; fill: {AMBER}; paint-order: stroke; stroke: {INK}; stroke-width: 3px; }}
+    .g {{ font-size: 4.2px; font-weight: 700; }}
     .me {{ animation: pulse 1.8s ease-in-out infinite; }}
     @keyframes pulse {{ 50% {{ opacity: .4; }} }}
     @media (prefers-reduced-motion: reduce) {{ .me {{ animation: none; }} }}
