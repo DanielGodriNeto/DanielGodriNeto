@@ -10,6 +10,7 @@ import argparse
 import base64
 import datetime as dt
 import json
+import math
 import os
 import urllib.request
 from html import escape
@@ -22,7 +23,7 @@ MONO = "ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace"
 # (altitude m, col, row) on the east face of k2-ascii.png (260 x 194 characters), glacier to summit.
 ROUTE = [
     (0, 175, 150), (5000, 189, 133), (6050, 201, 114), (6700, 189, 94),
-    (7400, 172, 76), (7700, 169, 55), (8200, 138, 34), (8611, 97, 3),
+    (7400, 172, 76), (7700, 157, 46), (8200, 139, 35), (8611, 99, 4),
 ]
 CAMPS = ["BC", "C1", "C2", "C3", "C4", "Bottleneck", "Summit"]    # names for ROUTE[1:], in order
 ART = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "k2-ascii.png")
@@ -57,17 +58,34 @@ def fetch_stats(token):
     return total, user["public_repos"], created.strftime("%Y-%m")
 
 
+def _curve():
+    """Dense (altitude, col, row) samples: a Catmull-Rom spline through the camps plus a gentle sway."""
+    pts = [(c, r) for _, c, r in ROUTE]
+    ext = [pts[0]] + pts + [pts[-1]]
+    out = []
+    for i in range(len(pts) - 1):
+        (a0, _, _), (a1, _, _) = ROUTE[i], ROUTE[i + 1]
+        p0, p1, p2, p3 = ext[i:i + 4]
+        sway = (4.0 if i < 4 else 1.5) * (1 if i % 2 else -1)
+        for k in range(24):
+            u = k / 24
+            x, y = (0.5 * (2 * b + (-a + c) * u + (2 * a - 5 * b + 4 * c - d) * u * u + (-a + 3 * b - 3 * c + d) * u ** 3)
+                    for a, b, c, d in zip(p0, p1, p2, p3))
+            out.append((a0 + (a1 - a0) * u, x + sway * math.sin(math.pi * u), y))
+    out.append(ROUTE[-1])
+    return out
+
+
+CURVE = _curve()
+
+
 def point_at(altitude):
-    """Interpolate the route position for an altitude in metres."""
-    for (a0, x0, y0), (a1, x1, y1) in zip(ROUTE, ROUTE[1:]):
+    """Position on the curve for an altitude in metres."""
+    for (a0, x0, y0), (a1, x1, y1) in zip(CURVE, CURVE[1:]):
         if altitude <= a1:
             t = (altitude - a0) / (a1 - a0)
             return x0 + t * (x1 - x0), y0 + t * (y1 - y0)
-    return ROUTE[-1][1], ROUTE[-1][2]
-
-
-def xy(col, row):
-    return PANEL_X + col * CELL_W, PANEL_Y + (row + 0.5) * CELL_H
+    return CURVE[-1][1], CURVE[-1][2]
 
 
 def line_cells(p0, p1):
@@ -88,12 +106,11 @@ def block(c, r, w, h):
 def route_cells(altitude):
     """The route as characters on the art grid: {(col, row): (char, colour)}."""
     cur = point_at(altitude)
-    pts = [(c, r) for _, c, r in ROUTE]
     grid = {}
-    for p0, p1 in zip(pts, pts[1:]):
-        for cell in line_cells(p0, p1):
+    for (_, c0, r0), (_, c1, r1) in zip(CURVE, CURVE[1:]):
+        for cell in line_cells((c0, r0), (c1, r1)):
             grid[cell] = ("+", "#cfdbe3")
-    done = [(c, r) for a, c, r in ROUTE if a <= altitude] + [cur]
+    done = [(c, r) for a, c, r in CURVE if a <= altitude] + [cur]
     for p0, p1 in zip(done, done[1:]):
         for cell in line_cells(p0, p1):
             grid[cell] = ("#", AMBER)
