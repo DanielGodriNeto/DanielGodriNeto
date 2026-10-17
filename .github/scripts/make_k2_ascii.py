@@ -1,39 +1,29 @@
-"""One-off generator: shrinks the hand-made K2 ASCII art into a dark-theme version.
+"""One-off generator: turns the K2 drawing into a dark-theme ASCII picture.
 
-Reads the original (black ink on white, dense = dark), rebuilds its tone map, replaces the sky
-and clouds with a quiet starfield, inverts it for a dark background (dense = bright snow) and
-writes k2-ascii.txt and k2-ascii.png (the card embeds the PNG). Needs Pillow + numpy; the nightly card
-only reads the PNG.
-Usage: python make_k2_ascii.py montanha2_ascii.txt k2-ascii.txt k2-ascii.png
+Reads the drawing (dark ink on white), replaces the sky and clouds with a quiet starfield, inverts
+it for a dark background (dense character = bright snow) and writes k2-ascii.txt and k2-ascii.png.
+The card embeds the PNG. Needs Pillow + numpy; the nightly card only reads the PNG.
+Usage: python make_k2_ascii.py k2-source.jpg k2-ascii.txt k2-ascii.png
 """
 import sys
 
 import numpy as np
 from PIL import Image, ImageDraw
 
-COLS, ROWS = 260, 195
+COLS, ROWS = 260, 194
 FONT, SIZE = r"C:\Windows\Fonts\consolab.ttf", 10
-# Sky outline (x, y) on a 1040x1560 view of the source: everything above this line is replaced.
-SKY = [(1040, 0), (1040, 680), (940, 560), (820, 455), (700, 392), (600, 330), (530, 225), (515, 170),
-       (440, 80), (395, 22), (370, 40), (330, 110), (290, 160), (220, 250), (130, 370), (60, 470),
-       (0, 560), (0, 0)]
+SRC_W, SRC_H = 906, 1125
+# Sky outline (x, y) on the 906x1125 drawing: everything above this line is replaced.
+SKY = [(906, 0), (906, 500), (840, 520), (760, 440), (700, 370), (660, 320), (600, 285), (540, 250),
+       (500, 210), (460, 125), (420, 80), (340, 10), (310, 30), (260, 100), (230, 140), (190, 190),
+       (120, 280), (60, 350), (0, 420), (0, 0)]
 
 
 def load_tone(path):
-    """Ink darkness (0 light .. 1 dark) of each character of the source, as a rows x cols grid."""
-    from PIL import ImageFont
-    font = ImageFont.truetype(FONT, SIZE)
-    lines = open(path, encoding="utf-8").read().split(chr(10))
-    width = max(map(len, lines))
-    lines = [l.ljust(width) for l in lines]
-    cw = round(font.getlength("M"))
-    ink = {}
-    for c in set("".join(lines)):
-        im = Image.new("L", (cw, SIZE), 255)
-        ImageDraw.Draw(im).text((0, 0), c, font=font, fill=0)
-        ink[c] = 255 - np.asarray(im).mean()
-    a = np.array([[ink[c] for c in l] for l in lines])
-    return (a - a.min()) / (a.max() - a.min())
+    """Ink darkness (0 light .. 1 dark) of the drawing, as a grid at its native resolution."""
+    img = Image.open(path).convert("L")
+    assert img.size == (SRC_W, SRC_H), img.size
+    return 1 - np.asarray(img, dtype=np.float32) / 255.0
 
 
 def density_ramp(levels=18):
@@ -61,7 +51,7 @@ def shrink(grid):
 
 def sky_mask(h, w):
     img = Image.new("L", (w, h), 0)
-    ImageDraw.Draw(img).polygon([(x * w / 1040, y * h / 1560) for x, y in SKY], fill=255)
+    ImageDraw.Draw(img).polygon([(x * w / SRC_W, y * h / SRC_H) for x, y in SKY], fill=255)
     return shrink(np.asarray(img, dtype=np.float32) / 255.0) > 0.5
 
 

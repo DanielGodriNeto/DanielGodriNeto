@@ -19,15 +19,15 @@ SUMMIT_M = 8611
 INK, SNOW, ICE, ROCK, AMBER = "#0f1419", "#e8eef2", "#7fb6d4", "#2b3640", "#e0a458"
 MONO = "ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace"
 
-# (altitude m, col, row) on the east face of k2-ascii.png (260 x 195 characters), glacier to summit.
+# (altitude m, col, row) on the east face of k2-ascii.png (260 x 194 characters), glacier to summit.
 ROUTE = [
-    (0, 176, 148), (5000, 186, 124), (6050, 196, 100), (6700, 188, 80),
-    (7400, 168, 64), (7700, 148, 52), (8200, 124, 32), (8611, 98, 4),
+    (0, 175, 150), (5000, 189, 133), (6050, 201, 114), (6700, 189, 94),
+    (7400, 172, 76), (7700, 169, 55), (8200, 138, 34), (8611, 97, 3),
 ]
 CAMPS = ["BC", "C1", "C2", "C3", "C4", "Bottleneck", "Summit"]    # names for ROUTE[1:], in order
 ART = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "k2-ascii.png")
 PANEL_X, PANEL_Y, PANEL_W, PANEL_H = 14, 14, 400, 500
-COLS, ROWS = 260, 195
+COLS, ROWS = 260, 194
 CELL_W, CELL_H = PANEL_W / COLS, PANEL_H / ROWS
 
 
@@ -123,8 +123,8 @@ def render(contributions, repos, joined):
         row(170, "Since", joined),
     ]
     camps = []
-    for n, (alt, _, _) in enumerate(ROUTE[1:]):
-        y = 252 + n * 20
+    for n, (alt, _, _) in reversed(list(enumerate(ROUTE[1:]))):    # summit on top, like the mountain
+        y = 252 + (len(CAMPS) - 1 - n) * 20
         mark = ("●", AMBER) if alt <= meters else ("○", "#5d7488")
         camps.append(f'<text x="458" y="{y}"><tspan fill="{mark[1]}">{mark[0]}</tspan>'
                      f'<tspan x="480" class="k">{n + 1}</tspan><tspan x="506">{escape(CAMPS[n])}</tspan>'
