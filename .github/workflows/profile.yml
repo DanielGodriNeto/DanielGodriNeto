@@ -35,6 +35,8 @@ jobs:
     needs: climb-card
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main   # the card job just pushed; the trigger SHA is already behind
       # Pinned to a reviewed commit (v1 as of 2026-07-15); only talks to api.github.com.
       - uses: egorthinks/git-bonsai@bec04c39f62731fdb28c3b82322ef21cbf3bdfac
         with:
