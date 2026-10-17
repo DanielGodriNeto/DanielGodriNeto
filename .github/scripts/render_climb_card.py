@@ -18,7 +18,7 @@ from html import escape
 
 USER = "DanielGodriNeto"
 SUMMIT_M, BASE_M, GOAL = 8611, 5000, 8611    # summit altitude, Base Camp altitude, contributions needed
-GRAY = "#9aa8b3"
+GRAY = "#2f74b5"
 INK, SNOW, ICE, ROCK, AMBER = "#0f1419", "#e8eef2", "#7fb6d4", "#2b3640", "#e0a458"
 MONO = "ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace"
 
