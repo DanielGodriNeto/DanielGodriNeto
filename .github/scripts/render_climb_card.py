@@ -24,7 +24,7 @@ ROUTE = [
     (0, 176, 148), (5000, 186, 124), (6050, 196, 100), (6700, 188, 80),
     (7400, 168, 64), (7700, 148, 52), (8200, 124, 32), (8611, 98, 4),
 ]
-LABELS = {5000: "BC 5,000", 8200: "Bottleneck", 8611: "8,611"}
+CAMPS = ["BC", "C1", "C2", "C3", "C4", "Bottleneck", "Summit"]    # names for ROUTE[1:], in order
 ART = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "k2-ascii.png")
 PANEL_X, PANEL_Y, PANEL_W, PANEL_H = 14, 14, 400, 500
 COLS, ROWS = 260, 195
@@ -66,75 +66,87 @@ def point_at(altitude):
     return ROUTE[-1][1], ROUTE[-1][2]
 
 
-def marker(col, row, char, cls):
-    x = PANEL_X + col * CELL_W
-    y = PANEL_Y + (row + 1) * CELL_H
-    return f'<text class="{cls}" x="{x:.1f}" y="{y:.1f}">{char}</text>'
+def xy(col, row):
+    return PANEL_X + col * CELL_W, PANEL_Y + (row + 0.5) * CELL_H
+
+
+def route_svg(altitude):
+    """Dashed full route, solid amber up to the climber, numbered camps (filled once reached)."""
+    full = " ".join("%.1f,%.1f" % xy(c, r) for _, c, r in ROUTE)
+    done = [(a, c, r) for a, c, r in ROUTE if a <= altitude]
+    col, row = point_at(altitude)
+    climbed = " ".join("%.1f,%.1f" % xy(c, r) for _, c, r in done) + " %.1f,%.1f" % xy(col, row)
+    out = [f'<polyline points="{full}" fill="none" stroke="{SNOW}" stroke-width="1.2" stroke-dasharray="2 4" opacity=".55"/>',
+           f'<polyline points="{climbed}" fill="none" stroke="{AMBER}" stroke-width="1.8"/>']
+    for n, (alt, c, r) in enumerate(ROUTE[1:], 1):
+        x, y = xy(c, r)
+        fill = AMBER if alt <= altitude else INK
+        out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="5" fill="{fill}" stroke="{AMBER}" stroke-width="1.2"/>')
+        out.append(f'<text class="num" x="{x + 9:.1f}" y="{y + 3:.1f}">{n}</text>')
+    x, y = xy(col, row)
+    out.append(f'<circle class="me" cx="{x:.1f}" cy="{y:.1f}" r="4" fill="{SNOW}" stroke="{AMBER}" stroke-width="2"/>')
+    return "".join(out)
 
 
 def scene(altitude):
-    col, row = point_at(altitude)
     with open(ART, "rb") as f:
         png = base64.b64encode(f.read()).decode()
-    tags = []
-    for alt, label in LABELS.items():
-        c, r = next((c, r) for a, c, r in ROUTE if a == alt)
-        tags.append(marker(c, r, "o", "pin"))
-        tags.append(f'<text class="tag" x="{PANEL_X + (c + 3) * CELL_W:.1f}" y="{PANEL_Y + (r + 1) * CELL_H:.1f}">{escape(label)}</text>')
     return f'''<clipPath id="frame"><rect x="{PANEL_X}" y="{PANEL_Y}" width="{PANEL_W}" height="{PANEL_H}" rx="4"/></clipPath>
   <image href="data:image/png;base64,{png}" x="{PANEL_X}" y="{PANEL_Y}" width="{PANEL_W}" height="{PANEL_H}" clip-path="url(#frame)"/>
-  {"".join(tags)}
-  {marker(col, row, "@", "me")}
+  {route_svg(altitude)}
   <rect x="{PANEL_X + .5}" y="{PANEL_Y + .5}" width="{PANEL_W - 1}" height="{PANEL_H - 1}" rx="4" fill="none" stroke="{ROCK}"/>
   <text class="tag" x="{PANEL_X + 10}" y="{PANEL_Y + PANEL_H - 10}" style="fill:#7d8a96">K2 · East Face</text>'''
 
 
+def box(y, h, title):
+    return (f'<rect x="440" y="{y}" width="360" height="{h}" rx="3" fill="none" stroke="{ROCK}"/>'
+            f'<rect x="452" y="{y - 7}" width="{len(title) * 8 + 12}" height="14" fill="{INK}"/>'
+            f'<text class="k" x="458" y="{y + 4}">{escape(title)}</text>')
+
+
+def row(y, key, val):
+    return f'<text x="458" y="{y}"><tspan class="k">{escape(key)}</tspan><tspan class="v" x="570">{escape(val)}</tspan></text>'
+
+
 def render(contributions, repos, joined):
     meters = min(contributions, SUMMIT_M)
-    frac = meters / SUMMIT_M
-    bar_w = 300
-    rows = [
-        ("Name", "Daniel Godri Neto"),
-        ("Study", "Computer Science, PUC-PR"),
-        ("Focus", "Applied AI, graphics, games"),
-        ("Stack", "Python, Java, JavaScript"),
-        ("Languages", "PT, EN (C1), JA (learning)"),
-        ("Repos", f"{repos} public"),
-        ("Joined", joined),
+    nxt = next(((a, n) for n, (a, _, _) in enumerate(ROUTE[1:]) if a > meters), None)
+    goal = f"{CAMPS[nxt[1]]}, {nxt[0]:,} m ({nxt[0] - meters:,} to go)" if nxt else "Summit reached"
+    bar_w = 324
+    climb = [
+        row(70, "Altitude", f"{meters:,} m of {SUMMIT_M:,} m"),
+        f'<rect x="458" y="80" width="{bar_w}" height="6" rx="3" fill="{ROCK}"/>',
+        f'<rect x="458" y="80" width="{max(bar_w * meters / SUMMIT_M, 4):.1f}" height="6" rx="3" fill="{AMBER}"/>',
+        row(110, "Next camp", goal),
+        row(130, "Contributions", f"{contributions:,} (1 = 1 m)"),
+        row(150, "Repos", f"{repos} public"),
+        row(170, "Since", joined),
     ]
-    lines = []
-    y = 98
-    for key, val in rows:
-        lines.append(
-            f'<text x="448" y="{y}"><tspan class="k">{escape(key)}</tspan>'
-            f'<tspan class="v" x="542">{escape(val)}</tspan></text>'
-        )
-        y += 19
-    alt = f"{meters:,} m of {SUMMIT_M:,} m"
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="820" height="528" viewBox="0 0 820 528" role="img" aria-label="Profile card: a climber at {meters} metres on K2's east face, one contribution per metre">
+    camps = []
+    for n, (alt, _, _) in enumerate(ROUTE[1:]):
+        y = 252 + n * 20
+        mark = ("●", AMBER) if alt <= meters else ("○", "#5d7488")
+        camps.append(f'<text x="458" y="{y}"><tspan fill="{mark[1]}">{mark[0]}</tspan>'
+                     f'<tspan x="480" class="k">{n + 1}</tspan><tspan x="506">{escape(CAMPS[n])}</tspan>'
+                     f'<tspan x="640" class="dim">{alt:,} m</tspan></text>')
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="820" height="528" viewBox="0 0 820 528" role="img" aria-label="Profile card: ASCII K2 with a climber at {meters} metres on the east face, one contribution per metre">
   <style>
     text {{ font-family: {MONO}; font-size: 13px; fill: {SNOW}; }}
     .k {{ fill: {ICE}; font-weight: 700; }}
-    .dim {{ fill: #7d8a96; font-size: 11px; }}
+    .dim {{ fill: #7d8a96; font-size: 12px; }}
     .tag {{ font-size: 9px; fill: {AMBER}; }}
-    .pin {{ fill: {AMBER}; font-size: 8px; font-weight: 700; }}
-    .me {{ fill: {AMBER}; font-size: 12px; font-weight: 700; animation: pulse 1.8s ease-in-out infinite; }}
-    @keyframes pulse {{ 50% {{ opacity: .35; }} }}
+    .num {{ font-size: 10px; font-weight: 700; fill: {AMBER}; paint-order: stroke; stroke: {INK}; stroke-width: 3px; }}
+    .me {{ animation: pulse 1.8s ease-in-out infinite; }}
+    @keyframes pulse {{ 50% {{ opacity: .4; }} }}
     @media (prefers-reduced-motion: reduce) {{ .me {{ animation: none; }} }}
   </style>
   <rect x=".5" y=".5" width="819" height="527" rx="8" fill="{INK}" stroke="{ROCK}"/>
-  <line x1="428" y1="24" x2="428" y2="504" stroke="{ROCK}"/>
   {scene(meters)}
-
-  <g transform="translate(0 110)">
-  <text x="448" y="62" style="font-size:15px;font-weight:700">daniel<tspan style="fill:{ICE}">@</tspan>github</text>
-  <line x1="448" y1="72" x2="544" y2="72" stroke="{ROCK}"/>
-  {chr(10).join("  " + l for l in lines)}
-
-  <text x="448" y="{y + 12}"><tspan class="k">Altitude</tspan><tspan class="v" x="542">{alt}</tspan></text>
-  <rect x="448" y="{y + 24}" width="{bar_w}" height="6" rx="3" fill="{ROCK}"/>
-  <rect x="448" y="{y + 24}" width="{max(bar_w * frac, 4):.1f}" height="6" rx="3" fill="{AMBER}"/>
-  <text class="dim" x="448" y="{y + 48}">1 contribution = 1 metre. Summit: K2.</text>
+  <g transform="translate(0 52)">
+  {box(40, 150, "Climb")}
+  {chr(10).join(climb)}
+  {box(214, 168, "Camps")}
+  {chr(10).join(camps)}
   </g>
 </svg>
 '''
