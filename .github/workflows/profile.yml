@@ -1,0 +1,42 @@
+name: Profile assets
+
+on:
+  schedule:
+    - cron: "17 9 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-assets
+  cancel-in-progress: false
+
+jobs:
+  climb-card:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Render card
+        run: python .github/scripts/render_climb_card.py climb-card.svg
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add climb-card.svg
+          git diff --cached --quiet || git commit -m "chore: update climb card"
+          git pull --rebase -q
+          git push
+
+  bonsai:
+    runs-on: ubuntu-latest
+    needs: climb-card
+    steps:
+      - uses: actions/checkout@v4
+      # Pinned to a reviewed commit (v1 as of 2026-07-15); only talks to api.github.com.
+      - uses: egorthinks/git-bonsai@bec04c39f62731fdb28c3b82322ef21cbf3bdfac
+        with:
+          output-dir: assets/bonsai
+          commit-message: "chore: update bonsai"

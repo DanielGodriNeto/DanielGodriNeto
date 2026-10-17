@@ -1,107 +1,45 @@
 <div align="center">
-  <h1>Hi, I'm Daniel Godri Neto! 👋</h1>
-  <p><strong>Game Developer • Full Stack Engineer • AI Enthusiast</strong></p>
-
-  <p align="center">
-    <a href="https://www.linkedin.com/in/danielgodrineto/" target="_blank">
-      <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-    </a>
-    <a href="mailto:godrineto@gmail.com" target="_blank">
-      <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
-    </a>
-    <img src="https://img.shields.io/badge/Discord-Mancato__Hiroshi-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
-  </p>
+  <img src="./climb-card.svg" alt="Profile card: Daniel Godri Neto, Computer Science, with a climber on K2" width="820">
 </div>
 
-<br/>
+I'm a Computer Science student at PUC-PR (Curitiba, Brazil) building tools at the edge of games, graphics and applied AI. I like projects where something has to be measured, not just shown: a culling pass that has to fit in a frame, a scanner that has to be right about prices, a voice agent that has to pick the correct action.
 
-## 🚀 Sobre Mim
+*Em português:* estudo Ciência da Computação na PUC-PR e construo ferramentas entre jogos, gráficos e IA aplicada. Prefiro projetos em que dá para medir o resultado.
 
-Apaixonado por tecnologia, desenvolvimento de jogos e inteligência artificial. Tenho foco em criar **mods para games**, explorar engenharia reversa e construir ferramentas que expandem as possibilidades originais dos softwares.
+## Selected work
 
-- 🛠️ **Projetos Variados:** Desenvolvimento de ferramentas úteis, automações e experimentos práticos.
-- 🎓 **Foco Acadêmico:** Transformando conceitos teóricos da faculdade em aplicações reais e código de produção.
-- 🧠 **Especialização:** Aplicando IA para otimização de fluxos de trabalho e engenharia de software.
+| Project | What it is |
+|---|---|
+| [cs2-trade-calculator](https://github.com/DanielGodriNeto/cs2-trade-calculator) | Read-only scanner for profitable CS2 trade-up contracts and Steam Market anomalies, with a React dashboard and a [live demo](https://cs2-trade-calculator.onrender.com). It never logs into Steam or places orders. |
+| [Godri-Culling](https://github.com/DanielGodriNeto/Godri-Culling) | Sodium add-on for Minecraft that moves terrain frustum and occlusion culling to GPU compute shaders, with indirect draws and no CPU readback. Falls back to stock Sodium if anything is unsupported. |
+| [local-ai-agent](https://github.com/DanielGodriNeto/local-ai-agent) | Push-to-talk voice agent: local Whisper transcription, a small ONNX classifier that picks an allowlisted action, and escalation to Claude Code for anything complex, after confirmation. |
+| [Asteroids-Scratch](https://github.com/DanielGodriNeto/Asteroids-Scratch) | Asteroids remake in Scratch 3 with an arcade mode and a roguelite "Build" mode. Made for the Apple Developer Academy PUCPR selection. |
 
-<br/>
+More: [portfolio](https://danielgodrineto.github.io/Resume-Portifolio/) (PT / EN / JP), [Cookie-Clicker-Mods](https://github.com/DanielGodriNeto/Cookie-Clicker-Mods), [Jogo-battleship](https://github.com/DanielGodriNeto/Jogo-battleship).
 
-## 🥇 Conquistas Acadêmicas
+## Stack
 
-<div align="center">
-  <p>🥇 <strong>1º Lugar — Projeto Jokenpô</strong><br/><sub>Raciocínio Algorítmico · PUC-PR</sub></p>
-  <p>🥈 <strong>2º Lugar — Projeto Batalha Naval</strong><br/><sub>Raciocínio Algorítmico · PUC-PR</sub></p>
-</div>
+Python, Java, JavaScript, HTML/CSS, Git, Linux. Minecraft modding with Fabric and NeoForge; OpenGL compute shaders; ONNX and local Whisper for on-device inference.
 
-<br/>
+## Education
 
-## 🏆 Certificações em Destaque
+- B.Sc. Computer Science, PUC-PR (2026 to present). 1st place on the Rock-Paper-Scissors project and 2nd place on Battleship in Algorithmic Reasoning.
+- English C1 (EF SET). Japanese in progress: [daily study notes](https://github.com/DanielGodriNeto/Guia-de-estudos-Portugues-e-Ingles-para-Japones) with spaced repetition.
 
-<div align="center">
-  <p><strong>Google AI Professional Certificate</strong></p>
-  <img src="./google-ai-professional-certificate.png" width="240" alt="Google AI Professional Certificate" style="border-radius: 8px; margin-bottom: 20px;"/>
-  
-  <br/>
-  <p align="center"><small>Especializações Concluídas</small></p>
-  
-  <!-- Grid Responsivo de Sub-certificações com borda fina para destacar no Dark Mode -->
-  <img src="./google-ai-fundamentals.png" width="95" alt="AI Fundamentals" title="AI Fundamentals" style="border-radius: 6px; margin: 2px; border: 1px solid #262b26;"/>
-  <img src="./google-ai-for-app-building.png" width="95" alt="AI for App Building" title="AI for App Building" style="border-radius: 6px; margin: 2px; border: 1px solid #262b26;"/>
-  <img src="./google-ai-for-brainstorming-and-planning.1.png" width="95" alt="AI for Brainstorming and Planning" title="AI for Brainstorming and Planning" style="border-radius: 6px; margin: 2px; border: 1px solid #262b26;"/>
-  <img src="./google-ai-for-content-creation.png" width="95" alt="AI for Content Creation" title="AI for Content Creation" style="border-radius: 6px; margin: 2px; border: 1px solid #262b26;"/>
-  <img src="./google-ai-for-data-analysis.png" width="95" alt="AI for Data Analysis" title="AI for Data Analysis" style="border-radius: 6px; margin: 2px; border: 1px solid #262b26;"/>
-  <img src="./google-ai-for-research-and-insights.png" width="95" alt="AI for Research and Insights" title="AI for Research and Insights" style="border-radius: 6px; margin: 2px; border: 1px solid #262b26;"/>
-  <img src="./google-ai-for-writing-and-communicating.png" width="95" alt="AI for Writing and Communicating" title="AI for Writing and Communicating" style="border-radius: 6px; margin: 2px; border: 1px solid #262b26;"/>
-</div>
+<details>
+<summary>Certifications</summary>
+<br>
 
-<br/>
+Google AI Professional Certificate, Foundations of Cybersecurity (Google), Empreendedorismo (SEBRAE, 4 tracks).
+
+<img src="./certificates/google-ai-professional-certificate.png" width="260" alt="Google AI Professional Certificate">
+
+</details>
+
+## Contact
+
+[LinkedIn](https://www.linkedin.com/in/danielgodrineto/) · [Email](mailto:godrineto@gmail.com) · [Portfolio](https://danielgodrineto.github.io/Resume-Portifolio/)
 
 <div align="center">
-  <img src="https://img.shields.io/badge/English-C1%20(EF%20SET)-4CAF50?style=for-the-badge" alt="English C1" />
-  <img src="https://img.shields.io/badge/Cybersecurity-Foundations%20(Google)-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Foundations of Cybersecurity" />
-  <img src="https://img.shields.io/badge/Empreendedorismo-SEBRAE%20(4%20trilhas)-003399?style=for-the-badge" alt="Empreendedorismo SEBRAE" />
-</div>
-
-<br/>
-
-## 🛠️ Tecnologias & Ferramentas
-
-<div align="center">
-  <img src="https://skillicons.dev/icons?i=python,js,java,html,css,godot,unity,unreal,git,linux,vscode,pycharm,wordpress,notion,raspberrypi" alt="Minhas Tecnologias" />
-</div>
-
-<br/>
-
-## 📊 Estatísticas do GitHub
-
-<div align="center">
-  <a href="https://github.com/DanielGodriNeto?tab=repositories&type=source">
-    <img src="./github-metrics.svg" alt="GitHub Metrics" width="100%" />
-  </a>
-</div>
-
-<br/>
-
-## 🎮 Projetos em Destaque
-
-<div align="center">
-  <!-- Forçando dimensões grandes mantendo a proporção exata de 480x180 para não cortar e ficar grande -->
-  <img src="./cs2-card.svg" alt="CS2 Trade-Up Scanner Stats" width="850" height="318" />
-</div>
-
-<br/>
-
----
-
-<div align="center">
-  <!-- Analytics alinhado verticalmente -->
-  <p align="center">
-    <img src="https://count.getloli.com/@:DanielGodriNeto?theme=minecraft&padding=5&offset=0&scale=1.5&align=top&pixelated=1&darkmode=auto" alt="visitor counter" style="vertical-align: middle;" />
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="https://hitscounter.dev" style="vertical-align: middle;">
-      <img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2FDanielGodriNeto&label=Views&icon=github&color=%232ea44f&style=flat-square" alt="hits counter" />
-    </a>
-  </p>
-
-  <!-- Animação da cobrinha -->
-  <img src="https://raw.githubusercontent.com/DanielGodriNeto/DanielGodriNeto/snake-output/snake.svg" alt="Snake animation" width="100%" />
+  <img src="./assets/bonsai/bonsai.gif" alt="Pixel-art bonsai grown from my GitHub history" width="220">
 </div>
