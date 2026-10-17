@@ -1,6 +1,7 @@
 """Renders climb-card.svg: a fastfetch-style profile card with an ASCII K2 with a progress marker on the east face.
 
-1 GitHub contribution = 1 metre; the summit is K2 (8,611 m). Pure stdlib.
+The climb starts at K2 Base Camp (5,000 m); GOAL contributions reach the summit (8,611 m), so one
+contribution is a fraction of a metre. Pure stdlib.
 The scene is k2-ascii.png (ASCII art, made by make_k2_ascii.py); camps use approximate Abruzzi-side altitudes.
 Usage:
   python render_climb_card.py OUT.svg                      # live data, needs GITHUB_TOKEN
@@ -16,17 +17,17 @@ import urllib.request
 from html import escape
 
 USER = "DanielGodriNeto"
-SUMMIT_M = 8611
+SUMMIT_M, BASE_M, GOAL = 8611, 5000, 8611    # summit altitude, Base Camp altitude, contributions needed
 GRAY = "#9aa8b3"
 INK, SNOW, ICE, ROCK, AMBER = "#0f1419", "#e8eef2", "#7fb6d4", "#2b3640", "#e0a458"
 MONO = "ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace"
 
-# (altitude m, col, row) on the east face of k2-ascii.png (260 x 194 characters), glacier to summit.
+# (altitude m, col, row) on the east face of k2-ascii.png (260 x 194 characters), Base Camp to summit.
 ROUTE = [
-    (0, 175, 150), (5000, 189, 133), (6050, 201, 114), (6700, 189, 94),
+    (5000, 189, 133), (6050, 201, 114), (6700, 189, 94),
     (7400, 172, 76), (7700, 157, 46), (8200, 139, 35), (8611, 99, 4),
 ]
-CAMPS = ["BC", "C1", "C2", "C3", "C4", "Bottleneck", "Summit"]    # names for ROUTE[1:], in order
+CAMPS = ["BC", "C1", "C2", "C3", "C4", "Bottleneck", "Summit"]    # names for ROUTE, in order
 ART = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "k2-ascii.png")
 PANEL_X, PANEL_Y, PANEL_W, PANEL_H = 14, 14, 400, 500
 COLS, ROWS = 260, 194
@@ -115,7 +116,7 @@ def route_cells(altitude):
     for p0, p1 in zip(done, done[1:]):
         for cell in line_cells(p0, p1):
             grid[cell] = ("#", AMBER)
-    for alt, c, r in ROUTE[1:]:
+    for alt, c, r in ROUTE:
         reached = alt <= altitude
         for cell in block(c, r - 1, 6, 3):
             grid[cell] = ("@", AMBER) if reached else ("O", GRAY)
@@ -157,7 +158,7 @@ def route_svg(altitude):
     me = {cell: ("@", "#ffffff") for cell in block(round(col), round(row) - 1, 8, 4)}
     nums = "".join(
         f'<text class="num" style="fill:{AMBER if a <= altitude else GRAY}" x="{PANEL_X + (c + 5) * CELL_W:.1f}" y="{PANEL_Y + (r + 1) * CELL_H:.1f}">{n}</text>'
-        for n, (a, c, r) in enumerate(ROUTE[1:], 1)
+        for n, (a, c, r) in enumerate(ROUTE, 1)
     )
     return ascii_rows(cells, "g") + nums + ascii_rows(me, "g me", shade=False)
 
@@ -183,27 +184,32 @@ def row(y, key, val):
 
 
 def render(contributions, repos, joined):
-    meters = min(contributions, SUMMIT_M)
-    nxt = next(((a, n) for n, (a, _, _) in enumerate(ROUTE[1:]) if a > meters), None)
-    goal = f"{CAMPS[nxt[1]]}, {nxt[0]:,} m ({nxt[0] - meters:,} to go)" if nxt else "Summit reached"
+    done = min(contributions, GOAL)
+    meters = BASE_M + done * (SUMMIT_M - BASE_M) // GOAL
+    nxt = next(((a, n) for n, (a, _, _) in enumerate(ROUTE) if a > meters), None)
+    if nxt:
+        left = -(-(nxt[0] - BASE_M) * GOAL // (SUMMIT_M - BASE_M)) - done      # ceil
+        goal = f"{CAMPS[nxt[1]]}, {nxt[0]:,} m ({left:,} to go)"
+    else:
+        goal = "Summit reached"
     bar_w = 324
     climb = [
         row(70, "Altitude", f"{meters:,} m of {SUMMIT_M:,} m"),
         f'<rect x="458" y="80" width="{bar_w}" height="6" rx="3" fill="{ROCK}"/>',
-        f'<rect x="458" y="80" width="{max(bar_w * meters / SUMMIT_M, 4):.1f}" height="6" rx="3" fill="{AMBER}"/>',
+        f'<rect x="458" y="80" width="{max(bar_w * done / GOAL, 4):.1f}" height="6" rx="3" fill="{AMBER}"/>',
         row(110, "Next camp", goal),
-        row(130, "Contributions", f"{contributions:,} (1 = 1 m)"),
+        row(130, "Contributions", f"{contributions:,} of {GOAL:,}"),
         row(150, "Repos", f"{repos} public"),
         row(170, "Since", joined),
     ]
     camps = []
-    for n, (alt, _, _) in reversed(list(enumerate(ROUTE[1:]))):    # summit on top, like the mountain
+    for n, (alt, _, _) in reversed(list(enumerate(ROUTE))):    # summit on top, like the mountain
         y = 252 + (len(CAMPS) - 1 - n) * 20
         mark = ("●", AMBER) if alt <= meters else ("○", "#5d7488")
         camps.append(f'<text x="458" y="{y}"><tspan fill="{mark[1]}">{mark[0]}</tspan>'
                      f'<tspan x="480" class="k">{n + 1}</tspan><tspan x="506">{escape(CAMPS[n])}</tspan>'
                      f'<tspan x="640" class="dim">{alt:,} m</tspan></text>')
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="820" height="528" viewBox="0 0 820 528" role="img" aria-label="Profile card: ASCII K2 with a climber at {meters} metres on the east face, one contribution per metre">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="820" height="528" viewBox="0 0 820 528" role="img" aria-label="Profile card: ASCII K2 with a climber at {meters} metres on the east face, 8,611 contributions to the summit">
   <style>
     text {{ font-family: {MONO}; font-size: 13px; fill: {SNOW}; }}
     .k {{ fill: {ICE}; font-weight: 700; }}
