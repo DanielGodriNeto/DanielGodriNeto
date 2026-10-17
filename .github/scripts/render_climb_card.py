@@ -173,9 +173,9 @@ def scene(altitude):
   <text class="tag" x="{PANEL_X + 10}" y="{PANEL_Y + PANEL_H - 10}" style="fill:#7d8a96">K2 · East Face</text>'''
 
 
-def box(y, h, title):
-    return (f'<rect x="440" y="{y}" width="360" height="{h}" rx="3" fill="none" stroke="{ROCK}"/>'
-            f'<rect x="452" y="{y - 7}" width="{len(title) * 8 + 12}" height="14" fill="{INK}"/>'
+def box(y, h, title, bg, line):
+    return (f'<rect x="440" y="{y}" width="360" height="{h}" rx="3" fill="none" stroke="{line}"/>'
+            f'<rect x="452" y="{y - 7}" width="{len(title) * 8 + 12}" height="14" fill="{bg}"/>'
             f'<text class="k" x="458" y="{y + 4}">{escape(title)}</text>')
 
 
@@ -183,7 +183,12 @@ def row(y, key, val):
     return f'<text x="458" y="{y}"><tspan class="k">{escape(key)}</tspan><tspan class="v" x="570">{escape(val)}</tspan></text>'
 
 
-def render(contributions, repos, joined):
+# Card colours around the (always dark) mountain panel.
+DARK = dict(text=SNOW, key=ICE, dim="#7d8a96", bg=INK, line=ROCK)
+LIGHT = dict(text="#1f2933", key="#1d5f8f", dim="#5b6b78", bg="#f6f8fa", line="#c5ced6")
+
+
+def render(contributions, repos, joined, t=DARK):
     done = min(contributions, GOAL)
     meters = BASE_M + done * (SUMMIT_M - BASE_M) // GOAL
     nxt = next(((a, n) for n, (a, _, _) in enumerate(ROUTE) if a > meters), None)
@@ -195,7 +200,7 @@ def render(contributions, repos, joined):
     bar_w = 324
     climb = [
         row(70, "Altitude", f"{meters:,} m of {SUMMIT_M:,} m"),
-        f'<rect x="458" y="80" width="{bar_w}" height="6" rx="3" fill="{ROCK}"/>',
+        f'<rect x="458" y="80" width="{bar_w}" height="6" rx="3" fill="{t['line']}"/>',
         f'<rect x="458" y="80" width="{max(bar_w * done / GOAL, 4):.1f}" height="6" rx="3" fill="{AMBER}"/>',
         row(110, "Next camp", goal),
         row(130, "Contributions", f"{contributions:,} of {GOAL:,}"),
@@ -211,9 +216,9 @@ def render(contributions, repos, joined):
                      f'<tspan x="640" class="dim">{alt:,} m</tspan></text>')
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="820" height="528" viewBox="0 0 820 528" role="img" aria-label="Profile card: ASCII K2 with a climber at {meters} metres on the east face, 8,611 contributions to the summit">
   <style>
-    text {{ font-family: {MONO}; font-size: 13px; fill: {SNOW}; }}
-    .k {{ fill: {ICE}; font-weight: 700; }}
-    .dim {{ fill: #7d8a96; font-size: 12px; }}
+    text {{ font-family: {MONO}; font-size: 13px; fill: {t["text"]}; }}
+    .k {{ fill: {t["key"]}; font-weight: 700; }}
+    .dim {{ fill: {t["dim"]}; font-size: 12px; }}
     .tag {{ font-size: 9px; fill: {AMBER}; }}
     .num {{ font-size: 10px; font-weight: 700; paint-order: stroke; stroke: {INK}; stroke-width: 1.6px; }}
     .g {{ font-size: 4.2px; font-weight: 700; paint-order: stroke; stroke: {INK}; stroke-width: .3px; }}
@@ -221,12 +226,12 @@ def render(contributions, repos, joined):
     @keyframes pulse {{ 50% {{ opacity: .4; }} }}
     @media (prefers-reduced-motion: reduce) {{ .me {{ animation: none; }} }}
   </style>
-  <rect x=".5" y=".5" width="819" height="527" rx="8" fill="{INK}" stroke="{ROCK}"/>
+  <rect x=".5" y=".5" width="819" height="527" rx="8" fill="{t["bg"]}" stroke="{t["line"]}"/>
   {scene(meters)}
   <g transform="translate(0 52)">
-  {box(40, 150, "Climb")}
+  {box(40, 150, "Climb", t["bg"], t["line"])}
   {chr(10).join(climb)}
-  {box(214, 168, "Camps")}
+  {box(214, 168, "Camps", t["bg"], t["line"])}
   {chr(10).join(camps)}
   </g>
 </svg>
@@ -243,8 +248,9 @@ def main():
         stats = (args.contributions, args.repos, "2026-03")
     else:
         stats = fetch_stats(os.environ["GITHUB_TOKEN"])
-    with open(args.out, "w", encoding="utf-8", newline="\n") as f:
-        f.write(render(*stats))
+    for path, theme in ((args.out, DARK), (args.out.replace(".svg", "-light.svg"), LIGHT)):
+        with open(path, "w", encoding="utf-8", newline="\n") as f:
+            f.write(render(*stats, theme))
 
 
 if __name__ == "__main__":
