@@ -2,6 +2,8 @@
   <img src="./climb-card.svg" alt="Profile card: Daniel Godri Neto, Computer Science, with a climber on K2" width="820">
 </div>
 
+<sub>**How to read the card.** The climber starts at K2 Base Camp (5,000 m) and climbs the east face as my GitHub contributions grow (commits, pull requests, issues, reviews). 8,611 contributions reach the 8,611 m summit, so one contribution is about 0.42 m. Amber is the route already climbed, blue is what is left. Updated daily.</sub>
+
 I'm a Computer Science student at PUC-PR (Curitiba, Brazil) building tools at the edge of games, graphics and applied AI. I like projects where something has to be measured, not just shown: a culling pass that has to fit in a frame, a scanner that has to be right about prices, a voice agent that has to pick the correct action.
 
 *Em português:* estudo Ciência da Computação na PUC-PR e construo ferramentas entre jogos, gráficos e IA aplicada. Prefiro projetos em que dá para medir o resultado.
@@ -41,5 +43,6 @@ Google AI Professional Certificate, Foundations of Cybersecurity (Google), Empre
 [LinkedIn](https://www.linkedin.com/in/danielgodrineto/) · [Email](mailto:godrineto@gmail.com) · [Portfolio](https://danielgodrineto.github.io/Resume-Portifolio/)
 
 <div align="center">
-  <img src="./assets/bonsai/bonsai.gif" alt="Pixel-art bonsai grown from my GitHub history" width="220">
+  <img src="./assets/bonsai/bonsai.gif" alt="Pixel-art bonsai grown from my GitHub history" width="220"><br>
+  <sub>Grown from my commit history by <a href="https://github.com/egorthinks/git-bonsai">git-bonsai</a>.</sub>
 </div>
