@@ -17,6 +17,7 @@ from html import escape
 
 USER = "DanielGodriNeto"
 SUMMIT_M = 8611
+GRAY = "#9aa8b3"
 INK, SNOW, ICE, ROCK, AMBER = "#0f1419", "#e8eef2", "#7fb6d4", "#2b3640", "#e0a458"
 MONO = "ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace"
 
@@ -109,7 +110,7 @@ def route_cells(altitude):
     grid = {}
     for (_, c0, r0), (_, c1, r1) in zip(CURVE, CURVE[1:]):
         for cell in line_cells((c0, r0), (c1, r1)):
-            grid[cell] = ("+", "#cfdbe3")
+            grid[cell] = ("+", GRAY)
     done = [(c, r) for a, c, r in CURVE if a <= altitude] + [cur]
     for p0, p1 in zip(done, done[1:]):
         for cell in line_cells(p0, p1):
@@ -117,12 +118,14 @@ def route_cells(altitude):
     for alt, c, r in ROUTE[1:]:
         reached = alt <= altitude
         for cell in block(c, r - 1, 6, 3):
-            grid[cell] = ("@", AMBER) if reached else ("O", SNOW)
+            grid[cell] = ("@", AMBER) if reached else ("O", GRAY)
     return grid
 
 
-def ascii_rows(cells, cls):
-    """One <text> per grid row, characters pinned to their column by textLength."""
+def ascii_rows(cells, cls, shade=True):
+    """One <text> per grid row, characters pinned to their column by textLength.
+
+    With shade, a translucent dark strip under each run keeps grey characters readable on snow."""
     out = []
     for r in sorted({r for _, r in cells}):
         cols = {c: v for (c, rr), v in cells.items() if rr == r}
@@ -134,6 +137,13 @@ def ascii_rows(cells, cls):
             else:
                 runs.append([col, ch])
         spans = "".join(f'<tspan fill="{col or "none"}">{t}</tspan>' for col, t in runs)
+        if shade:
+            c = min(cols)
+            for col, t in runs:
+                if col:
+                    out.append(f'<rect x="{PANEL_X + c * CELL_W:.2f}" y="{PANEL_Y + r * CELL_H:.2f}" '
+                               f'width="{len(t) * CELL_W:.2f}" height="{CELL_H:.2f}" fill="{INK}" opacity=".7"/>')
+                c += len(t)
         x = PANEL_X + min(cols) * CELL_W
         out.append(f'<text class="{cls}" x="{x:.2f}" y="{PANEL_Y + (r + 1) * CELL_H - 0.4:.2f}" '
                    f'textLength="{(max(cols) - min(cols) + 1) * CELL_W:.2f}" lengthAdjust="spacingAndGlyphs" '
@@ -146,10 +156,10 @@ def route_svg(altitude):
     col, row = point_at(altitude)
     me = {cell: ("@", "#ffffff") for cell in block(round(col), round(row) - 1, 8, 4)}
     nums = "".join(
-        f'<text class="num" x="{PANEL_X + (c + 5) * CELL_W:.1f}" y="{PANEL_Y + (r + 1) * CELL_H:.1f}">{n}</text>'
-        for n, (_, c, r) in enumerate(ROUTE[1:], 1)
+        f'<text class="num" style="fill:{AMBER if a <= altitude else GRAY}" x="{PANEL_X + (c + 5) * CELL_W:.1f}" y="{PANEL_Y + (r + 1) * CELL_H:.1f}">{n}</text>'
+        for n, (a, c, r) in enumerate(ROUTE[1:], 1)
     )
-    return ascii_rows(cells, "g") + nums + ascii_rows(me, "g me")
+    return ascii_rows(cells, "g") + nums + ascii_rows(me, "g me", shade=False)
 
 
 def scene(altitude):
@@ -199,8 +209,8 @@ def render(contributions, repos, joined):
     .k {{ fill: {ICE}; font-weight: 700; }}
     .dim {{ fill: #7d8a96; font-size: 12px; }}
     .tag {{ font-size: 9px; fill: {AMBER}; }}
-    .num {{ font-size: 10px; font-weight: 700; fill: {AMBER}; paint-order: stroke; stroke: {INK}; stroke-width: 3px; }}
-    .g {{ font-size: 4.2px; font-weight: 700; }}
+    .num {{ font-size: 10px; font-weight: 700; paint-order: stroke; stroke: {INK}; stroke-width: 1.6px; }}
+    .g {{ font-size: 4.2px; font-weight: 700; paint-order: stroke; stroke: {INK}; stroke-width: .3px; }}
     .me {{ animation: pulse 1.8s ease-in-out infinite; }}
     @keyframes pulse {{ 50% {{ opacity: .4; }} }}
     @media (prefers-reduced-motion: reduce) {{ .me {{ animation: none; }} }}
