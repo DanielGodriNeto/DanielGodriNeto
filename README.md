@@ -24,7 +24,7 @@ I'm a Computer Science student at PUC-PR (Curitiba, Brazil) building tools at th
       <a href="https://cs2-trade-calculator.onrender.com">Live demo</a>
     </td>
     <td width="50%" valign="top">
-      <a href="https://github.com/DanielGodriNeto/Godri-Culling"><img src="./assets/work/Godri-Culling.png" alt="Godri-Culling"></a><br>
+      <a href="https://github.com/DanielGodriNeto/Godri-Culling"><img src="./assets/work/Godri-Culling.jpg" alt="Godri-Culling"></a><br>
       <b><a href="https://github.com/DanielGodriNeto/Godri-Culling">Godri-Culling</a></b> &nbsp;<sub>Java</sub><br>
       Sodium add-on for Minecraft that moves terrain frustum and occlusion culling to GPU compute shaders, with indirect draws and no CPU readback. Falls back to stock Sodium.<br>
       <a href="https://github.com/DanielGodriNeto/Godri-Culling">Source</a>

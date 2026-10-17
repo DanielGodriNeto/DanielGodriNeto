@@ -1,4 +1,5 @@
 """One-off generator: terminal-style thumbnails for the README's Selected work cards (assets/work/*.png).
+The other two cards use real screenshots (cs2 dashboard demo, Godri-Culling terrain).
 
 Needs Pillow. Swap any PNG for a real screenshot at the same name when you have one.
 Usage: python make_work_thumbs.py assets/work
@@ -11,8 +12,6 @@ from PIL import Image, ImageDraw, ImageFont
 BOLD, REG = r"C:\Windows\Fonts\consolab.ttf", r"C:\Windows\Fonts\consola.ttf"
 W, H = 800, 400
 WORK = [
-    ("cs2-trade-calculator", "trade-up scanner + market anomalies", ["Python", "React", "ML (planned)"], (224, 164, 88)),
-    ("Godri-Culling", "GPU culling for Minecraft (Sodium)", ["Java", "OpenGL", "compute shaders"], (127, 182, 212)),
     ("local-ai-agent", "push-to-talk voice agent", ["Python", "Whisper", "ONNX"], (61, 220, 151)),
     ("Asteroids-Scratch", "arcade + roguelite build mode", ["Scratch 3", "game design"], (240, 120, 120)),
 ]
