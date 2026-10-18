@@ -4,7 +4,7 @@
     <img src="./climb-card.svg" alt="Profile card: Daniel Godri Neto, Computer Science, with a climber on K2" width="820">
   </picture>
   <br><br>
-  <a href="#selected-work">Work</a> &nbsp;·&nbsp; <a href="#stack">Stack</a> &nbsp;·&nbsp; <a href="#education">Education</a> &nbsp;·&nbsp; <a href="#contact">Contact</a>
+  <a href="#portfolio">Portfolio</a> &nbsp;·&nbsp; <a href="#selected-work">Work</a> &nbsp;·&nbsp; <a href="#stack">Stack</a> &nbsp;·&nbsp; <a href="#education">Education</a> &nbsp;·&nbsp; <a href="#contact">Contact</a>
 </div>
 
 <sub>**How to read the card.** The climber starts at K2 Base Camp (5,000 m) and climbs the east face as my GitHub contributions grow (commits, pull requests, issues, reviews). 8,611 contributions reach the 8,611 m summit, so one contribution is about 0.42 m. Amber is the route already climbed, blue is what is left. Updated daily.</sub>
@@ -12,6 +12,17 @@
 I'm a Computer Science student at PUC-PR (Curitiba, Brazil) building tools at the edge of games, graphics and applied AI. I like projects where something has to be measured, not just shown: a culling pass that has to fit in a frame, a scanner that has to be right about prices, a voice agent that has to pick the correct action.
 
 *Em português:* estudo Ciência da Computação na PUC-PR e construo ferramentas entre jogos, gráficos e IA aplicada. Prefiro projetos em que dá para medir o resultado.
+
+## Portfolio
+
+<div align="center">
+  <a href="https://resume-portifolio-vagas-ebd126.gitlab.io/">
+    <img src="./assets/work/portfolio-scroll.gif" alt="Scrolling preview of my portfolio site: hero, projects, creations and contact" width="720">
+  </a>
+  <br><br>
+  <a href="https://resume-portifolio-vagas-ebd126.gitlab.io/"><img src="https://img.shields.io/badge/Open_the_portfolio-000000?style=for-the-badge&logo=firefox&logoColor=white" alt="Open the portfolio"></a>
+  <br><sub>Trilingual (PT, EN, 日本語). Click the preview to open it.</sub>
+</div>
 
 ## Selected work
 
@@ -46,7 +57,7 @@ I'm a Computer Science student at PUC-PR (Curitiba, Brazil) building tools at th
   </tr>
 </table>
 
-More: [portfolio](https://danielgodrineto.github.io/Resume-Portifolio/) (PT / EN / JP), [Cookie-Clicker-Mods](https://github.com/DanielGodriNeto/Cookie-Clicker-Mods), [Jogo-battleship](https://github.com/DanielGodriNeto/Jogo-battleship).
+More: [portfolio](https://resume-portifolio-vagas-ebd126.gitlab.io/) (PT / EN / JP), [Cookie-Clicker-Mods](https://github.com/DanielGodriNeto/Cookie-Clicker-Mods), [Jogo-battleship](https://github.com/DanielGodriNeto/Jogo-battleship).
 
 ## Stack
 
@@ -75,7 +86,7 @@ Google AI Professional Certificate, Foundations of Cybersecurity (Google), Empre
 
 ## Contact
 
-<a href="https://www.linkedin.com/in/danielgodrineto/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a> <a href="mailto:godrineto@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a> <a href="https://danielgodrineto.github.io/Resume-Portifolio/"><img src="https://img.shields.io/badge/Portfolio-3B3A36?style=for-the-badge&logo=firefox&logoColor=white" alt="Portfolio"></a>
+<a href="https://www.linkedin.com/in/danielgodrineto/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a> <a href="mailto:godrineto@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a> <a href="https://resume-portifolio-vagas-ebd126.gitlab.io/"><img src="https://img.shields.io/badge/Portfolio-3B3A36?style=for-the-badge&logo=firefox&logoColor=white" alt="Portfolio"></a>
 
 <div align="center">
   <img src="./assets/bonsai/bonsai.gif" alt="Pixel-art bonsai grown from my GitHub history" width="220"><br>
