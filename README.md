@@ -17,7 +17,7 @@ I'm a Computer Science student at PUC-PR (Curitiba, Brazil) building tools at th
 
 <div align="center">
   <a href="https://resume-portifolio-vagas-ebd126.gitlab.io/">
-    <img src="./assets/work/portfolio-scroll.gif" alt="Scrolling preview of my portfolio site: hero, projects, creations and contact" width="720">
+    <img src="./assets/work/portfolio-scroll.webp" alt="Scrolling preview of my portfolio site: hero, projects, creations and contact" width="720">
   </a>
   <br><br>
   <a href="https://resume-portifolio-vagas-ebd126.gitlab.io/"><img src="https://img.shields.io/badge/Open_the_portfolio-000000?style=for-the-badge&logo=firefox&logoColor=white" alt="Open the portfolio"></a>
