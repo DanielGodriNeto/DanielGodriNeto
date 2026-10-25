@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="820" height="528" viewBox="0 0 820 528" role="img" aria-label="Profile card: ASCII K2 with a climber at 5548 metres on the east face, 8,611 contributions to the summit">
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="528" viewBox="0 0 820 528" role="img" aria-label="Profile card: ASCII K2 with a climber at 5549 metres on the east face, 8,611 contributions to the summit">
   <style>
     text { font-family: ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace; font-size: 13px; fill: #e8eef2; }
     .k { fill: #7fb6d4; font-weight: 700; }
@@ -18,11 +18,11 @@
   <text class="tag" x="24" y="504" style="fill:#7d8a96">K2 · East Face</text>
   <g transform="translate(0 52)">
   <rect x="440" y="40" width="360" height="150" rx="3" fill="none" stroke="#2b3640"/><rect x="452" y="33" width="52" height="14" fill="#0f1419"/><text class="k" x="458" y="44">Climb</text>
-  <text x="458" y="70"><tspan class="k">Altitude</tspan><tspan class="v" x="570">5,548 m of 8,611 m</tspan></text>
+  <text x="458" y="70"><tspan class="k">Altitude</tspan><tspan class="v" x="570">5,549 m of 8,611 m</tspan></text>
 <rect x="458" y="80" width="324" height="6" rx="3" fill="#2b3640"/>
 <rect x="458" y="80" width="49.3" height="6" rx="3" fill="#e0a458"/>
-<text x="458" y="110"><tspan class="k">Next camp</tspan><tspan class="v" x="570">C1, 6,050 m (1,195 to go)</tspan></text>
-<text x="458" y="130"><tspan class="k">Contributions</tspan><tspan class="v" x="570">1,309 of 8,611</tspan></text>
+<text x="458" y="110"><tspan class="k">Next camp</tspan><tspan class="v" x="570">C1, 6,050 m (1,193 to go)</tspan></text>
+<text x="458" y="130"><tspan class="k">Contributions</tspan><tspan class="v" x="570">1,311 of 8,611</tspan></text>
 <text x="458" y="150"><tspan class="k">Repos</tspan><tspan class="v" x="570">44 public</tspan></text>
 <text x="458" y="170"><tspan class="k">Since</tspan><tspan class="v" x="570">2026-03</tspan></text>
   <rect x="440" y="214" width="360" height="168" rx="3" fill="none" stroke="#2b3640"/><rect x="452" y="207" width="52" height="14" fill="#0f1419"/><text class="k" x="458" y="218">Camps</text>
