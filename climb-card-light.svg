@@ -20,9 +20,9 @@
   <rect x="440" y="40" width="360" height="150" rx="3" fill="none" stroke="#c5ced6"/><rect x="452" y="33" width="52" height="14" fill="#f6f8fa"/><text class="k" x="458" y="44">Climb</text>
   <text x="458" y="70"><tspan class="k">Altitude</tspan><tspan class="v" x="570">5,561 m of 8,611 m</tspan></text>
 <rect x="458" y="80" width="324" height="6" rx="3" fill="#c5ced6"/>
-<rect x="458" y="80" width="50.3" height="6" rx="3" fill="#e0a458"/>
-<text x="458" y="110"><tspan class="k">Next camp</tspan><tspan class="v" x="570">C1, 6,050 m (1,166 to go)</tspan></text>
-<text x="458" y="130"><tspan class="k">Contributions</tspan><tspan class="v" x="570">1,338 of 8,611</tspan></text>
+<rect x="458" y="80" width="50.4" height="6" rx="3" fill="#e0a458"/>
+<text x="458" y="110"><tspan class="k">Next camp</tspan><tspan class="v" x="570">C1, 6,050 m (1,165 to go)</tspan></text>
+<text x="458" y="130"><tspan class="k">Contributions</tspan><tspan class="v" x="570">1,339 of 8,611</tspan></text>
 <text x="458" y="150"><tspan class="k">Repos</tspan><tspan class="v" x="570">45 public</tspan></text>
 <text x="458" y="170"><tspan class="k">Since</tspan><tspan class="v" x="570">2026-03</tspan></text>
   <rect x="440" y="214" width="360" height="168" rx="3" fill="none" stroke="#c5ced6"/><rect x="452" y="207" width="52" height="14" fill="#f6f8fa"/><text class="k" x="458" y="218">Camps</text>
